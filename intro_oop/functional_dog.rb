@@ -18,11 +18,11 @@ my_dog_2 = {
     hunger: 100
 }
 
-def walk_dog(*dogs)
+def dog_walks(*dogs)
     dogs.each { |dog| dog[:energy] = 0 }
 end
 
-def feed_dog(dog)
+def dog_eats(dog)
     dog[:hunger] -= 10
 end
 
