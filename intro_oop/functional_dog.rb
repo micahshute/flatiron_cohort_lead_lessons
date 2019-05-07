@@ -18,23 +18,33 @@ my_dog_2 = {
     hunger: 100
 }
 
-def dog_walks(*dogs)
-    dogs.each { |dog| dog[:energy] = 0 }
+def dog_walks(*ogs)
+    dog[:energy] = 0 
+    dog
 end
 
 def dog_eats(dog)
-    dog[:hunger] -= 10
+    dog[:hunger] -= 70
+    dog
 end
 
 def display_dog_info(dog)
-    puts dog.to_s
+    puts "Hi! My name is #{dog[:name]}. I am a #{dog[:breed]} and I am #{dog[:temperment]}."
+    dog[:energy] > 50 ? puts("I am soooo excited!") : puts("I am tired")
+    dog[:hunger] > 50 ? puts("FEED MEEEEE!!") : puts("Give me treats")
     dog
 end
 
 
-walk_dog(my_dog_1, my_dog_2)
-feed_dog(my_dog_1)
-feed_dog(my_dog_2)
 
+display_dog_info(my_dog_1)
+display_dog_info(my_dog_2)
+puts "--------------------------------------"
+dog_walks(my_dog_1)
+dog_walks(my_dog_2)
+
+dog_eats(my_dog_1)
+dog_eats(my_dog_2)
+puts "--------------------------------------"
 display_dog_info(my_dog_1)
 display_dog_info(my_dog_2)
