@@ -35,4 +35,4 @@ iq_gen = GaussianGenerator.new(100, 15)
 10.times do 
     iqs << iq_gen.rand
 end
-puts iqs.to_s
+puts iqs.map(&:round).to_s
