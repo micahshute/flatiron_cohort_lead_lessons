@@ -68,6 +68,7 @@ class Muggle < Human
 
 end
 
+
 class Wizard < Human
 
     attr_reader :magic
