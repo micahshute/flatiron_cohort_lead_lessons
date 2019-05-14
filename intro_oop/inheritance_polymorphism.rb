@@ -64,6 +64,9 @@ class Human
 
 end
 
+class Muggle < Human
+
+end
 
 class Wizard < Human
 
@@ -122,7 +125,7 @@ class Spell
     end
 end
 
-micah = Human.new("Micah")
+micah = Muggle.new("Micah")
 harry = Wizard.new("Harry")
 stupify = Spell.new("Stupify", "Stun Victim", 10)
 
