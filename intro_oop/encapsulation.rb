@@ -26,7 +26,7 @@ end
  
 class Human
 
-    attr_reader :pets, :name
+    attr_reader :name
 
     def initialize(name)
         @name = name
@@ -36,6 +36,10 @@ class Human
     def add_pet(pet)
         pet.owner = self
         @pets << pet if pet.owner == self
+    end
+
+    def pets
+        @pets.freeze
     end
 end
 
@@ -53,7 +57,12 @@ pongo.change_name("Pongo you old rascal", roger)
 puts pongo.name # => "Pongo you old rascal" because now roger is the owner
 
 
-cruella = Human.new("Cruella DeVile")
+cruella = Human.new("Cruella DeVille")
 cruella.add_pet(pongo) 
 puts cruella.pets # => an empty array because roger is already owned
 puts pongo.owner.name # => Roger
+
+
+pets = cruella.pets 
+pets << pongo
+puts cruella.pets
