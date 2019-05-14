@@ -117,7 +117,9 @@ class Spell
     end
 
     def perform(caster)
-        if caster.is_a? Wizard && caster.skill >= @skill
+        if caster.is_a? Wizard 
+        # or if caster.class == Wizard
+        # or caster.responds_to? :cast
             puts "#{name}! *#{effect}*"
             true
         else
