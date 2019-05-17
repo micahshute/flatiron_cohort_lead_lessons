@@ -1,4 +1,6 @@
 ## Setup 
+
+#### Open up a REPL and follow along.
 ```ruby
 class Dog
 
