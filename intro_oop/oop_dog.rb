@@ -45,3 +45,6 @@ my_dog_2.eat
 puts "--------------------------------------"
 my_dog_1.display
 my_dog_2.display
+
+
+
