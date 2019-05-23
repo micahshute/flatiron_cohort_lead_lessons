@@ -121,7 +121,6 @@ class WandFactory
 
 end
 
-
 ## Now, let's populate!!
 
 Wood.mass_assign_from_arrays(wood_types, wood_descriptions)

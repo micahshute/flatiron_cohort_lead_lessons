@@ -48,7 +48,7 @@ class CLI
         if !@setup_thread.status 
             wand = @factory.make_wand
             puts "\n\n#{wand}\n\n"
-            puts "That is a very nice wand! Do you want to see more?\n\n"
+            puts "That is a very nice wand! Do you want to learn more about it?\n\n"
             res = gets.strip.downcase
             if res == "yes" || res == "y"
                 puts "\n\n"

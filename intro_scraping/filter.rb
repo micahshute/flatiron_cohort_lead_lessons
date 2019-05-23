@@ -64,7 +64,7 @@ core_descriptions = core_descriptions.each.with_index.reduce([]){ |memo, (el, i)
 
 # wood_types = parsed_woods.css("h2").map(&:text)
 # puts wood_types.to_s
-# # wood_types = wood_types[1, wood_types.length - 2]
+# wood_types = wood_types[1, wood_types.length - 2]
 
 # # OR (slightly less elegantly)
 
