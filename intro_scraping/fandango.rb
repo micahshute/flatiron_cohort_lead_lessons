@@ -70,3 +70,7 @@ manager.now_playing = movies
 puts manager.now_playing.first.name
 puts manager.now_playing.first.img
 puts manager.now_playing.first.info_url
+puts manager.now_playing.last.name
+puts manager.now_playing.last.img
+puts manager.now_playing.last.info_url
+puts manager.now_playing.length
