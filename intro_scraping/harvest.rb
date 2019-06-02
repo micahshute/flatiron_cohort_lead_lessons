@@ -15,7 +15,7 @@ page = open(woods_url)
 # puts page.class
 # puts page.content_type
 # puts page.read
-puts page.read.class
+puts page.read
 
 
 html_text = page.read
