@@ -2,15 +2,15 @@ require 'open-uri'
 require 'nokogiri'
 
 
-# url = "https://www.fandango.com/moviesintheaters"
-# pg = open(url).read
-# parsed_html = Nokogiri::HTML(pg)
-# movie_lis = parsed_html.css("h2:contains('Now Playing')~ul.visual-list.movie-list li.visual-item")
-# name_img_url = movie_lis.map{ |li| [
-#     li.css('div.visual-detail a').text.strip,
-#     li.css('img').first.attr('src'),
-#     li.css('a')[0].attr('href')
-# ]}
+url = "https://www.fandango.com/moviesintheaters"
+pg = open(url).read
+parsed_html = Nokogiri::HTML(pg)
+movie_lis = parsed_html.css("h2:contains('Now Playing')~ul.visual-list.movie-list li.visual-item")
+name_img_url = movie_lis.map{ |li| [
+    li.css('div.visual-detail a').text.strip,
+    li.css('img').first.attr('src'),
+    li.css('a')[0].attr('href')
+]}
 
 
 class MovieScraper
