@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require_relative '../lib/current_movies.rb'
+app = CLI.new
+app.run
