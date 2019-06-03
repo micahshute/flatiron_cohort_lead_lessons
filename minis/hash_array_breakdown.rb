@@ -79,7 +79,7 @@ uppercased_list = shopping_list.map do |item|
     item.upcase
 end
 
-puts uppercased_list.to_s # => ["STEAK", "POTATOES", "CEREAL", "MILK", "BEER", "BROCCOLI"]
+puts uppercased_list # => ["STEAK", "POTATOES", "CEREAL", "MILK", "BEER", "BROCCOLI"]
 
 ## Change an array item at an index
 ## We can change an array item at a specific index if we know it's location.
@@ -88,11 +88,11 @@ puts uppercased_list.to_s # => ["STEAK", "POTATOES", "CEREAL", "MILK", "BEER", "
 # shopping list but we want to trick them into not getting it when they go shopping, we 
 # can change the list:
 
-puts shopping_list.to_s # => ["steak", "potatoes", "cereal", "milk", "beer", "broccoli"]
+puts shopping_list # => ["steak", "potatoes", "cereal", "milk", "beer", "broccoli"]
 
 shopping_list[shopping_list.length - 1] = "wine"
 
-puts shopping_list.to_s # => ["steak", "potatoes", "cereal", "milk", "beer", "wine"]
+puts shopping_list # => ["steak", "potatoes", "cereal", "milk", "beer", "wine"]
 
 # You can alter any item in the list this way. So they can get their revenge:
 
@@ -130,12 +130,16 @@ puts shopping_list # No longer has "wine"
 
 
 ## Further reading
-# https://gistpages.com/posts/ruby_arrays_insert_append_length_index_remove
 # There is a lot more you can do with arrays. Check out the ruby docs for arrays to see everything!
 
 ### Deep Cuts:
 
-### So what's the downside of using arrays? Well, 
+### So what's the downside of using arrays? Well, finding things in arrays can be tough. If you have an array with 
+### a LOT of elements, then you have to look through EACH ONE to find something! This is an O(n) process (ie it will take
+### a time that is linearlly proportional to the lenght of the array). If you sort your array, you can do something called 
+### `binary search` that makes findng something in an array faster, specifically in O(lg(n)) time. (ie proportional to log base 2 of the 
+## length of the array). To do this, you have to sort the array first, which is O(n*lg(n)), which is not necessarily fast. Also, if you change the array
+## you either have to make sure 
 
 
 ## Uses
