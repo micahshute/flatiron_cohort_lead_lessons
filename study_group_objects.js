@@ -1,12 +1,12 @@
 // CUSTOMIZE THESE VARIABLES
 
-let cohortStartDate = '4/15/19'
+let cohortStartDate = '6/10/19'
 let cohortType = 'Part Time'
 let day1= 'Tuesday'
-let time1 = '8:00 pm'
+let time1 = '6:00 pm'
 let day2 = 'Thursday'
-let time2 = '9:30 am'
-let zoom = 'https://wework.zoom.us/j/2135328262'
+let time2 = '6:00 pm'
+let zoom = 'https://wework.zoom.us/j/9223879006'
 
 // END CUSTOMIZATION OF VARIABLES
 
@@ -44,6 +44,8 @@ cohortBreaks = [
 
 // SETUP RELATIVE WEEKS TO CURRENT DATE TO SCHEDULE YOUR 
 // STUDY GROUPS
+
+let cliSectionWeeks = Array.from({length: 7}, (v, k) => k+2);
 
 let sinatraSectionWeeks = []
 for(i = 9; i <= 16; i++){
