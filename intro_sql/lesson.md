@@ -9,32 +9,32 @@ Go to a good starting point:
 
 In terminal:  
 
-``` 
+```bash
 sqlite3 people.db
 ```   
 
-```
+```sql
 CREATE TABLE people (id INTEGER PRIMARY KEY, name TEXT); 
 ```   
 
-``` 
+```sql
 .quit 
 ```  
 see new file: 
-``` 
+```bash
 ls 
 ```
 open the file back up
-```
+```sql
 sqlite3
 .open people.db
 ```
 Make a new entry:
-```
+```sql
 INSERT INTO people (name) VALUES ("Micah");
 ```
 See the table
-```
+```sql
 SELECT * FROM people;
 ```
 Now, add some people from the study group
