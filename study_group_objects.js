@@ -1,12 +1,12 @@
 // CUSTOMIZE THESE VARIABLES
 
-let cohortStartDate = '4/15/19'
+let cohortStartDate = '6/10/19'
 let cohortType = 'Part Time'
 let day1= 'Tuesday'
-let time1 = '8:00 pm'
+let time1 = '6:00 pm'
 let day2 = 'Thursday'
-let time2 = '9:30 am'
-let zoom = 'https://wework.zoom.us/j/2135328262'
+let time2 = '6:00 pm'
+let zoom = 'https://wework.zoom.us/j/9223879006'
 
 // END CUSTOMIZATION OF VARIABLES
 
@@ -45,6 +45,8 @@ cohortBreaks = [
 // SETUP RELATIVE WEEKS TO CURRENT DATE TO SCHEDULE YOUR 
 // STUDY GROUPS
 
+let cliSectionWeeks = Array.from({length: 7}, (v, k) => k+2);
+
 let sinatraSectionWeeks = []
 for(i = 9; i <= 16; i++){
     sinatraSectionWeeks.push(i)
@@ -53,8 +55,9 @@ for(i = 9; i <= 16; i++){
 // GET THE RELATIVE WEEK YOUR COHORT STARTS (CAN BE IN FUTURE OR PAST)
 let weekOffset = Math.round((cohortStart - Date.now()) / (7 * 24 * 60 * 60 * 1000))
 
-// MAP THE SECITON'S CURRICULUM TO YOUR COHORT SHEDULE TAKING INTO ACCOUNT BREAK WEEKS AND THE CURRENT DATE
-let studygroupWeeks = sinatraSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
+// MAP THE SECITON'S CURRICULUM TO YOUR COHORT SHEDULE TAKING INTO ACCOUNT BREAK WEEKS AND THE CURRENT DATE, USING THE APPROPRIATE SECTION WEEKS
+let studygroupWeeks = cliSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
+// let studygroupWeeks = sinatraSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
 
 
 
@@ -113,7 +116,150 @@ function vacationMonday(date){
     return ndate
 }
 
+// Generic CLI Objects
 
+let cliSection = [
+    {
+        categories: ['Badges and Schedules Lab', 'Sorting Lab', 'Iteration', 'Arrays'],
+        title: `${cohort} Hot Potato Lab Walkthrough`,
+        description: 'A live walkthrough of key labs',
+        day: day1, 
+        time: time1,
+        weekToStart: studygroupWeeks[0],
+        weekToEnd: studygroupWeeks[0],
+        zoom
+    },
+    {
+        categories: ['Badges and Schedules Lab', 'Sorting Lab', 'Iteration', 'Arrays'],
+        title: `${cohort} Hot Potato Lab Walkthrough`,
+        description: 'Q&A about the weeks assignments',
+        day: day2, 
+        time: time2,
+        weekToStart: studygroupWeeks[0],
+        weekToEnd: studygroupWeeks[0],
+        zoom
+    },
+    {
+        categories: ['Hashes Manipulation Lab', 'Hashes', 'Nested Hash Iteration'],
+        title: `${cohort} Hot Potato Lab Walkthrough`,
+        description: 'A live walkthrough of key labs',
+        day: day1, 
+        time: time1,
+        weekToStart: studygroupWeeks[1],
+        weekToEnd: studygroupWeeks[1],
+        zoom
+    },
+    {
+        categories: ['Hashes Manipulation Lab', 'Hashes', 'Nested Hash Iteration'],
+        title: `${cohort} Hot Potato Lab Walkthrough`,
+        description: 'Q&A about the weeks assignments',
+        day: day2, 
+        time: time2,
+        weekToStart: studygroupWeeks[1],
+        weekToEnd: studygroupWeeks[1],
+        zoom
+    },
+    {
+        categories: ['OO Cash Register', 'Intro to Object Orientation', 'Object Properties', 'Object Models'],
+        title: `${cohort} Hot Potato Lab Walkthrough`,
+        description: 'A live walkthrough of key labs',
+        day: day1, 
+        time: time1,
+        weekToStart: studygroupWeeks[2],
+        weekToEnd: studygroupWeeks[2],
+        zoom
+    },
+    {
+        categories: ['OO Cash Register', 'Intro to Object Orientation', 'Object Properties', 'Object Models'],
+        title: `${cohort} Hot Potato Lab Walkthrough`,
+        description: 'Q&A about the weeks assignments',
+        day: day2, 
+        time: time2,
+        weekToStart: studygroupWeeks[2],
+        weekToEnd: studygroupWeeks[2],
+        zoom
+    },
+    {
+        categories: ['Collaborating Objects', 'Object Relationships', 'Object Architecture'],
+        title: `${cohort} Hot Potato Lab Walkthrough`,
+        description: 'A live walkthrough of key labs',
+        day: day1, 
+        time: time1,
+        weekToStart: studygroupWeeks[3],
+        weekToEnd: studygroupWeeks[3],
+        zoom
+    },
+    {
+        categories: ['Collaborating Objects', 'Object Relationships', 'Object Architecture'],
+        title: `${cohort} Hot Potato Lab Walkthrough`,
+        description: 'Q&A about the weeks assignments',
+        day: day2, 
+        time: time2,
+        weekToStart: studygroupWeeks[3],
+        weekToEnd: studygroupWeeks[3],
+        zoom
+    },
+    {
+        categories: ['Music Library CLI', 'Scraping'],
+        title: `${cohort} Hot Potato Lab Walkthrough`,
+        description: 'A live walkthrough of key labs',
+        day: day1, 
+        time: time1,
+        weekToStart: studygroupWeeks[4],
+        weekToEnd: studygroupWeeks[4],
+        zoom
+    },
+    {
+        categories: ['Music Library CLI', 'Scraping'],
+        title: `${cohort} Hot Potato Lab Walkthrough`,
+        description: 'Q&A about the weeks assignments',
+        day: day2, 
+        time: time2,
+        weekToStart: studygroupWeeks[4],
+        weekToEnd: studygroupWeeks[4],
+        zoom
+    },
+    {
+        categories: ['CLI Data Gem Portfolio Project'],
+        title: `${cohort} Ruby CLI Project Prep`,
+        description: 'Getting started with your CLI project',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[5],
+        weekToEnd: studygroupWeeks[5],
+        zoom
+    },
+    {
+        categories: ['CLI Data Gem Portfolio Project'],
+        title: `${cohort} Ruby CLI Project Prep`,
+        description: 'Getting started with your CLI project',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[5],
+        weekToEnd: studygroupWeeks[5],
+        zoom
+    },
+    {
+        categories: ['CLI Data Gem Portfolio Project'],
+        title: `${cohort} Open Office Hours (CLI Portfolio Project)`,
+        description: 'Organizing your scraped data',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[6],
+        weekToEnd: studygroupWeeks[6],
+        zoom
+    },
+    {
+        categories: ['CLI Data Gem Portfolio Project'],
+        title: `${cohort} Open Office Hours (CLI Portfolio Project)`,
+        description: 'Organizing your scraped data',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[6],
+        weekToEnd: studygroupWeeks[6],
+        zoom
+    },
+]
 
 // Generic Sinatra Objects
 
