@@ -1,5 +1,5 @@
 
-class TweetsApp
+class TweetApp
 
 
     def start
@@ -64,10 +64,10 @@ class TweetsApp
         puts
     end
 
-    def validate_tweet_id
+    def validate_tweet_id(valid_range = Tweet.all.map(&:id))
         id = gets.strip.to_i
-        while id <= 0 || id > Tweet.count
-            puts "You must enter a number between 1 and #{Tweet.count}. Type q to return to main menu."
+        while !valid_range.include? id
+            puts "You must enter a valid tweet id. Type q to return to main menu."
             id = gets.strip
             return nil if id.downcase == "q"
             id = id.to_i
