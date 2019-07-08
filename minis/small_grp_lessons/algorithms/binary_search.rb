@@ -1,10 +1,30 @@
 require 'faker'
 require 'pry'
 
+class Checks
+    def bincount
+        @@count
+    end
 
+    def bincount=(cnt)
+        @@count = cnt
+    end
+
+    def lincount
+        @@lincount
+    end
+
+    def lincount=(cnt)
+        @@lincount = cnt
+    end
+
+    @@bincount = 0
+    @@lincount = 0
+end
 
 
 def binary_search(arr, item, offset = 0)
+    Checks.bincount += 1
     return nil if arr.length == 0
     mid = arr.length / 2
     if item > arr[mid]
@@ -17,7 +37,7 @@ def binary_search(arr, item, offset = 0)
 end
 
 def linear_search(arr, item)
-    arr.each.with_index {|it, i| return i if it == item}
+    arr.each.with_index {|it, i| Checks.lincount +=1 ; return i if it == item}
     return nil
 end
 
@@ -39,3 +59,5 @@ puts "Starting Linear Search"
 puts linear_search(world_population, search_num)
 puts "Starting Include"
 puts world_population.include?(search_num)
+puts Checks.bincount
+puts Checks.lincount
