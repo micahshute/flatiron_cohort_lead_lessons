@@ -18,8 +18,17 @@ class Checks
         @@lincount = cnt
     end
 
+    def self.rbfindcount
+        @@rbfindcount
+    end
+
+    def self.rbfindcount=(cnt)
+        @@rbfindcount = cnt
+    end
+
     @@bincount = 0
     @@lincount = 0
+    @@rbfindcount = 0
 end
 
 
@@ -57,7 +66,8 @@ puts "Starting Binary Search"
 puts binary_search(world_population, search_num)
 puts "Starting Linear Search"
 puts linear_search(world_population, search_num)
-puts "Starting Include"
-puts world_population.include?(search_num)
-puts Checks.bincount
-puts Checks.lincount
+puts "Starting #find_index"
+puts world_population.find_index{ |item| Checks.rbfindcount += 1; item == search_num }
+puts "Binary search checks: #{Checks.bincount}"
+puts "Linear search checks: #{Checks.lincount}"
+puts "Ruby find index checks: #{Checks.rbfindcount}"
