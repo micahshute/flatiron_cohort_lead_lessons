@@ -2,19 +2,19 @@ require 'faker'
 require 'pry'
 
 class Checks
-    def bincount
-        @@count
+    def self.bincount
+        @@bincount
     end
 
-    def bincount=(cnt)
-        @@count = cnt
+    def self.bincount=(cnt)
+        @@bincount = cnt
     end
 
-    def lincount
+    def self.lincount
         @@lincount
     end
 
-    def lincount=(cnt)
+    def self.lincount=(cnt)
         @@lincount = cnt
     end
 
@@ -52,7 +52,7 @@ puts "Sorting..."
 # world_population.sort!
 puts "Ready?"
 gets
-search_num = 1000 # 327 * 10 ** 6 - 1
+search_num = 327 * 10 ** 6 - 1
 puts "Starting Binary Search"
 puts binary_search(world_population, search_num)
 puts "Starting Linear Search"
