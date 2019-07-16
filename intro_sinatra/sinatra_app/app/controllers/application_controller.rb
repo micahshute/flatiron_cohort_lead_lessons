@@ -8,6 +8,7 @@ class ApplicationController < Sinatra::Base
 
     post '/spell' do
         @spell = params[:spell]
+        @spell = "You are expelled" if @spell.downcase == "avada kedavra"
         erb :spell
     end
 
