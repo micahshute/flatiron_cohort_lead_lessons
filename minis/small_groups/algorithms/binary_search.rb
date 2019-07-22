@@ -1,4 +1,4 @@
-require 'faker'
+# require 'faker'
 require 'pry'
 
 class Checks
@@ -31,6 +31,23 @@ class Checks
     @@rbfindcount = 0
 end
 
+def binary(array, number)
+    min = 0 
+    max = array.length - 1
+   
+    while min <= max 
+     middle = (min + max)/2
+   
+     if array[middle] == number
+      return middle
+     elsif array[middle] < number
+      min = middle + 1
+     elsif array[middle] > number
+      max = middle - 1
+     end 
+    end 
+    return nil
+  end
 
 def binary_search(arr, item, offset = 0)
     Checks.bincount += 1
@@ -55,7 +72,8 @@ num_people = 327 * 10 ** 6
 world_population = []
 puts "Populating..."
 r = Random.new
-num_people.to_i.times.with_index { |i| world_population << i + 1}
+# num_people.to_i.times.with_index { |i| world_population << i + 1}
+world_population = (1..num_people).to_a
 puts "Sorting..."
 # world_population << "Micah Shute"
 # world_population.sort!
@@ -64,6 +82,7 @@ gets
 search_num = 327 * 10 ** 6 - 1
 puts "Starting Binary Search"
 puts binary_search(world_population, search_num)
+puts binary(world_population, search_num)
 puts "Starting Linear Search"
 puts linear_search(world_population, search_num)
 puts "Starting #find_index"
