@@ -1,0 +1,12 @@
+
+<h2>List</h2>
+<a href="/todos/new">New</a>
+<ul>
+<% @todos.each.with_index do |todo| %>
+    <li>
+        <span class="<%= todo.completed ? "completed" : "required" %>">
+            <a href="/todos/<%= todo.id%>"><%= todo.item %></a>
+        </span>
+    </li>
+<% end %>
+</ul>

@@ -1,0 +1,8 @@
+.completed a{
+    text-decoration: line-through;
+    color: red;
+}
+
+.required a{
+    color: green;
+}

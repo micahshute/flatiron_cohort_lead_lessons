@@ -1,0 +1,12 @@
+require 'bundler/setup'
+require './config/env'
+require 'sinatra/activerecord/rake'
+
+task :env do 
+    require './config/env'
+end
+
+desc 'Start a console with access to your models' 
+task :console => :env do 
+    Pry.start
+end

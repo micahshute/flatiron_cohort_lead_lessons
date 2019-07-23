@@ -1,0 +1,13 @@
+<form action="/todos/<%= @todo.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <input type="text" name="item" value="<%= @todo.item %>">
+    <label for="completed">Complete</label>
+    <input id="completed" type="checkbox" name="completed" <%= "checked" if @todo.completed %>>
+    <input type="submit" value="Update">
+</form>
+<form action="/todos/<%= @todo.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="id" value="<%= @todo.id %>">
+    <input type="submit" value="Delete Todo">
+</form>
+<a href="/todos">Cancel</a>
