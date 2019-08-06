@@ -1,0 +1,19 @@
+html{
+    background-color: #fffff0;
+}
+
+.danger{
+    color: red;
+}
+
+a{
+    margin: 5px;
+}
+
+.post{
+    background-color: white;
+    border: solid 2px gray;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}

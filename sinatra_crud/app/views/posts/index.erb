@@ -1,0 +1,4 @@
+<p><a href="/posts/new">New Post</a></p>
+<% @posts.each do |post| %>
+    <%= erb :'posts/_post', locals: {post: post} %>
+<% end %>

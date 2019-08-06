@@ -1,0 +1,11 @@
+<div class="post">
+    <h4><%= post.user.username %> ==> Posted at: <%= post.created_at %></h4>
+    <p class="post_content"><%= post.content %></p>
+    <% if own_post?(post) %>
+        <a href="/posts/<%= post.id%>/edit">Edit</a>
+        <form action="/posts/<%= post.id%>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete">
+        </form>
+    <% end %>
+</div>
