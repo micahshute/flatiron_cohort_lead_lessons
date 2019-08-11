@@ -10,13 +10,11 @@ class ApplicationController < Sinatra::Base
     end
 
     get '/' do
-        binding.pry
         erb :root
     end
 
     get '/home' do
         authorize
-        binding.pry
         erb :home
     end
 
