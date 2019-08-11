@@ -10,15 +10,22 @@ class ApplicationController < Sinatra::Base
     end
 
     get '/' do
+        binding.pry
         erb :root
     end
 
     get '/home' do
         authorize
+        binding.pry
         erb :home
     end
 
-
+    # Login 1
+    # {"session_id"=>"28b156e6efde9b62ea48b96aed22f3ba6a427b3d043fde17867114af3f6eae0f", "csrf"=>"iv+PLJUs7x1fKELQjCxv14Y6Hg7U91dB3+y7ko2b4Zc=", "tracking"=>{"HTTP_USER_AGENT"=>"cef06ffafe1492072268c9b04fc60fc6bbf5b09f"}, "user_id"=>1}
+    # Delete cookie 
+    # {"session_id"=>"211df4971785af8a80940c7df0fe48fc7768716f42c98b9fc7e8669ba99adde9", "csrf"=>"MGNMQtQc5k/BnihVeplFKk6LOkIY24LDafRV6NXDY0U=", "tracking"=>{"HTTP_USER_AGENT"=>"cef06ffafe1492072268c9b04fc60fc6bbf5b09f"}}
+    # Login 2
+    # {"session_id"=>"211df4971785af8a80940c7df0fe48fc7768716f42c98b9fc7e8669ba99adde9", "csrf"=>"MGNMQtQc5k/BnihVeplFKk6LOkIY24LDafRV6NXDY0U=", "tracking"=>{"HTTP_USER_AGENT"=>"cef06ffafe1492072268c9b04fc60fc6bbf5b09f"}, "user_id"=>1}
     helpers do
 
         def current_user
