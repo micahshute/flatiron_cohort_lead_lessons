@@ -5,6 +5,7 @@ class ApplicationController < Sinatra::Base
         set :views, 'app/views'
         set :public_folder, 'public'
         enable :sessions
+        # In Terminal: ruby -e "require 'sysrandom/securerandom'; puts SecureRandom.hex(64)"
         set :session_secret, ENV['SESSION_SECRET']
         set :show_exceptions, false
     end
