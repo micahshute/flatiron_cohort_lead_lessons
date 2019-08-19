@@ -1,12 +1,12 @@
 // CUSTOMIZE THESE VARIABLES
 
-let cohortStartDate = '6/10/19'
+let cohortStartDate = '4/15/19'
 let cohortType = 'Part Time'
 let day1= 'Tuesday'
 let time1 = '6:00 pm'
 let day2 = 'Thursday'
-let time2 = '6:00 pm'
-let zoom = 'https://wework.zoom.us/j/9223879006'
+let time2 = '7:30 am'
+let zoom = 'https://wework.zoom.us/j/2135328262'
 
 // END CUSTOMIZATION OF VARIABLES
 
@@ -45,17 +45,23 @@ cohortBreaks = [
 // SETUP RELATIVE WEEKS TO CURRENT DATE TO SCHEDULE YOUR 
 // STUDY GROUPS
 
-let cliSectionWeeks = Array.from({length: 7}, (v, k) => k+2);
+let cliSectionWeeks = Array.from({length: 7}, (v, k) => k + 2);
+let sinatraSectionWeeks = Array.from({length: 8}, (v,k) => k + 9)
+let railsSectionWeeks = Array.from({length: 8}, (v,k) => k + 17)
 
-let sinatraSectionWeeks = []
-for(i = 9; i <= 16; i++){
-    sinatraSectionWeeks.push(i)
-}
+
+// let sinatraSectionWeeks = []
+// for(i = 9; i <= 16; i++){
+//     sinatraSectionWeeks.push(i)
+// }
+
+
 
 // GET THE RELATIVE WEEK YOUR COHORT STARTS (CAN BE IN FUTURE OR PAST)
 let weekOffset = Math.round((cohortStart - Date.now()) / (7 * 24 * 60 * 60 * 1000))
 
 // MAP THE SECITON'S CURRICULUM TO YOUR COHORT SHEDULE TAKING INTO ACCOUNT BREAK WEEKS AND THE CURRENT DATE, USING THE APPROPRIATE SECTION WEEKS
+// THIS MUST BE EDITED TO THE SECTION YOU ARE ON
 let studygroupWeeks = cliSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
 // let studygroupWeeks = sinatraSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
 
@@ -418,6 +424,172 @@ let sinatraSection = [
         categories: ['Sinatra Project Mode'],
         title: `${cohort} Open Office Hours (Sinatra Portfolio Project)`,
         description: 'Open Office Hours for your Sinatra Portfolio Project',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[7],
+        weekToEnd: studygroupWeeks[7],
+        zoom
+    }
+]
+
+
+// Generic Rails Objects
+
+let railsSection = [
+    {
+        categories: ['Intro to Rails','Rails MVC'],
+        title: `${cohort} Intro to Rails`,
+        description: 'Introduction to Ruby on Rails',
+        day: day1, 
+        time: time1,
+        weekToStart: studygroupWeeks[0],
+        weekToEnd: studygroupWeeks[0],
+        zoom
+    },
+    {
+        categories: ['Intro to Rails','Rails MVC'],
+        title: `${cohort} Intro to RailsL`,
+        description: 'Introduction to Ruby on Rails',
+        day: day2, 
+        time: time2,
+        weekToStart: studygroupWeeks[0],
+        weekToEnd: studygroupWeeks[0],
+        zoom
+    },
+    {
+        categories: ['Rails MVC', "CRUD with Rails"],
+        title: `${cohort} Rails CRUD`, 
+        description: 'CRUD actions using Ruby on Rails',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[1],
+        weekToEnd: studygroupWeeks[1],
+        zoom
+    },
+    {
+        categories: ['Rails MVC', "CRUD with Rails"],
+        title: `${cohort} Rails CRUD`, 
+        description: 'CRUD actions using Ruby on Rails',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[1],
+        weekToEnd: studygroupWeeks[1],
+        zoom
+    },
+    {
+        categories: ['Associations and Rails', 'Rails Forms Overview'],
+        title: `${cohort} Rails Associations and Nested Forms`, 
+        description: 'Understand model relations and forms in RoR',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[2],
+        weekToEnd: studygroupWeeks[2],
+        zoom
+    },
+    {
+        categories: ['Associations and Rails', 'Rails Forms Overview'],
+        title: `${cohort} Rails Associations and Nested Forms`, 
+        description: 'Understand model relations and forms in RoR',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[2],
+        weekToEnd: studygroupWeeks[2],
+        zoom
+    },
+    {
+        categories: ['Layouts and Templates in Rails'],
+        title: `${cohort} Refactoring w Layous, Partials, Helpers`, 
+        description: 'Learn the basics of Sinatra',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[3],
+        weekToEnd: studygroupWeeks[3],
+        zoom
+    },
+    {
+        categories: ['Layouts and Templates in Rails'],
+        title: `${cohort} Refactoring w Layous, Partials, Helpers`, 
+        description: 'Learn the basics of Sinatra',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[3],
+        weekToEnd: studygroupWeeks[3],
+        zoom
+    },
+    {
+        categories: ['Intro to Rails'],
+        title: `${cohort} Routing in Rails - Nested Routes`, 
+        description: 'Learn about routing and nested routes in RoR',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[4],
+        weekToEnd: studygroupWeeks[4],
+        zoom
+    },
+    {
+        categories: ['Intro to Rails'],
+        title: `${cohort} Routing in Rails - Nested Routes`, 
+        description: 'Learn about routing and nested routes in RoR',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[4],
+        weekToEnd: studygroupWeeks[4],
+        zoom
+    },
+    {
+        categories: ['Authentication'],
+        title: `${cohort} Authentication in Rails`,
+        description: 'Learn Create, Read, Update, and Delete functionality using the Sinatra Framework',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[5], 
+        weekToEnd: studygroupWeeks[5],
+        zoom
+    },
+    {
+        categories: ['Authentication'],
+        title: `${cohort} Authentication in Rails`,
+        description: 'Learn Create, Read, Update, and Delete functionality using the Sinatra Framework',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[5], 
+        weekToEnd: studygroupWeeks[5],
+        zoom
+    },
+    {
+        categories: ['Rails Project Mode'],
+        title: `${cohort} Rails Portfolio Project Prep`,
+        description: 'Preparation for your Rails Portfolio Project',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[6],
+        weekToEnd: studygroupWeeks[6],
+        zoom
+    },
+    {
+        categories: ['Rails Project Mode'],
+        title: `${cohort} Rails Portfolio Project Prep`,
+        description: 'Preparation for your Rails Portfolio Project',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[6],
+        weekToEnd: studygroupWeeks[6],
+        zoom
+    },
+    {
+        categories: ['Rails Project Mode'],
+        title: `${cohort} Rails Portfolio Project Hours`,
+        description: 'Open Office Hours for your Rails Portfolio Project',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[7],
+        weekToEnd: studygroupWeeks[7],
+        zoom
+    },
+    {
+        categories: ['Rails Project Mode'],
+        title: `${cohort} Rails Portfolio Project Hours`,
+        description: 'Open Office Hours for your Rails Portfolio Project',
         day: day2,
         time: time2,
         weekToStart: studygroupWeeks[7],
