@@ -62,7 +62,7 @@ let weekOffset = Math.round((cohortStart - Date.now()) / (7 * 24 * 60 * 60 * 100
 
 // MAP THE SECITON'S CURRICULUM TO YOUR COHORT SHEDULE TAKING INTO ACCOUNT BREAK WEEKS AND THE CURRENT DATE, USING THE APPROPRIATE SECTION WEEKS
 // THIS MUST BE EDITED TO THE SECTION YOU ARE ON
-let studygroupWeeks = cliSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
+let studygroupWeeks = railsSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
 // let studygroupWeeks = sinatraSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
 
 
