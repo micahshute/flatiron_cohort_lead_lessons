@@ -25,7 +25,7 @@
         ```ruby
             def index
                 @items = Item.all
-                erb :item
+                render :item
             end
         ```
     - view:
@@ -130,12 +130,12 @@ delete '/items/:id', to: 'items#destroy'
 - Add controller action:
 ```ruby
 def edit
-    @todo = Todo.find(params[:id])
+    @item = Item.find(params[:id])
     render :edit
 end
 
 def destroy
-    Todo.find(params[:id]).destroy
+    Item.find(params[:id]).destroy
     redirect_to items_path
 end
 ```
@@ -286,7 +286,7 @@ end
     - before_actions
     ```ruby 
     #items_controller.rb
-    before_action :set_todo, only: [:show, :edit, :update, :destroy]
+    before_action :set_item, only: [:show, :edit, :update, :destroy]
 
     private
 
