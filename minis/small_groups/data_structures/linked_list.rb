@@ -44,8 +44,7 @@ class LinkedList
             node.next = @head
             @head = node
         else
-            curr_node = @head
-            (index - 1).times{ curr_node = curr_node.next }
+            curr_node = node_at(index - 1)
             curr_node.insert_after_self(node)
         end
         
@@ -55,8 +54,7 @@ class LinkedList
         if index == 0
             @head = @head.next 
         else
-            curr_node = @head
-            (index - 1).times{ curr_node = curr_node.next }
+            curr_node = node_at(index - 1)
             curr_node.delete_next_node
         end
     end
