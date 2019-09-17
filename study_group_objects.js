@@ -58,7 +58,7 @@ let railsSectionWeeks = Array.from({length: 8}, (v,k) => k + 17)
 
 
 // GET THE RELATIVE WEEK YOUR COHORT STARTS (CAN BE IN FUTURE OR PAST)
-let weekOffset = Math.round((cohortStart - Date.now()) / (7 * 24 * 60 * 60 * 1000))
+let weekOffset = Math.floor((cohortStart - Date.now()) / (7 * 24 * 60 * 60 * 1000))
 
 // MAP THE SECITON'S CURRICULUM TO YOUR COHORT SHEDULE TAKING INTO ACCOUNT BREAK WEEKS AND THE CURRENT DATE, USING THE APPROPRIATE SECTION WEEKS
 // THIS MUST BE EDITED TO THE SECTION YOU ARE ON
