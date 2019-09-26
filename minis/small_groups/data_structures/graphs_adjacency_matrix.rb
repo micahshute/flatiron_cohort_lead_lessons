@@ -1,3 +1,5 @@
+require 'pry'
+
 class Graph
 
     attr_reader :adj_mat, :nodes
@@ -153,3 +155,6 @@ class Graph
   g.connect(club, bar)
   g.connect(bar, pool)
   g.print_adj_mat
+
+
+  binding.pry
