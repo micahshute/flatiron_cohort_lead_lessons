@@ -1,5 +1,9 @@
-require 'pry'
-
+# This is the solution
+# To start, give them the code from graphs_adjacency_matrix.rb and have them implmement dfs
+# Can give them starting nodes as a problem to solve (e.g. starting with this node, what is the closest node which has x)
+# For starting, can use code @ bottom of this file
+require 'set'
+require "pry"
 class Graph
 
     attr_reader :adj_mat, :nodes
@@ -13,6 +17,23 @@ class Graph
       @adj_mat = rows.map{ |n| Array.new(col, 0)}
       @nodes = nodes
       @nodes.each_with_index { |n, i| n.index = i}
+    end
+
+    def bfs(starting_node)
+        queue = [starting_node]
+        seen = Set.new
+        while queue.length > 0
+            cnode = queue.shift
+            return cnode if yield(cnode)
+            next_gen = self.connections_to(cnode)
+            for n in next_gen
+                if !seen.include?(n)
+                    queue << n
+                    seen.add(n)
+                end
+            end
+        end
+        return nil
     end
   
     # Conncects from node1 to node2
@@ -111,51 +132,48 @@ class Graph
   
   end
   
-  
-  hideout = GNode.new("Secret Hideout")
-  pool = GNode.new("Pool")
-  beach = GNode.new("Beach")
-  library = GNode.new("Library")
-  mansion = GNode.new("Mansion")
-  
-  g = Graph.create_from_nodes([hideout, pool, beach, library, mansion])
-  # Can connect with indices OR nodes
-  g.connect(2,1) # Connects Beach with Pool
-  puts g.connections_from(2).map(&:data) # Should output "Pool"
-  puts g.connections_from(1).map(&:data) #Should output "Beach"
-  
-  g.connect(mansion, library) # Connects Mansion with Library
-  g.connect(mansion, hideout)
-  puts g.connections_to(library).map(&:data) # Should output "Mansion"
-  puts g.connections_to(mansion).map(&:data).to_s # Should output ["Library", "Secret Hideout"]
-  
-  g.print_adj_mat
-  
-  g.remove_conn(mansion, library)
-  puts g.connections_to(mansion).map(&:data).to_s # Should output ["Secret Hideout"]
-  
-  puts g.has_conn?(mansion, library) # Should output false
-  puts g.has_conn?(mansion, hideout) # Should output true
-  
-  # Make a directional connection from hideout to library but not back
-  g.connect_dir(library, hideout)
-  puts g.can_traverse_dir?(hideout, library) # output false
-  puts g.can_traverse_dir?(library, hideout) # output true
-  
-  # Add a new vertice
-  bar = GNode.new("Bar")
-  g.add_node(bar)
-  
-  puts g.nodes.to_s
-  g.print_adj_mat
-  puts 
-  puts
-  club = GNode.new("Club")
-  g.add_node(club)
-  g.connect(club, bar)
-  g.connect(bar, pool)
-  g.print_adj_mat
+
+# Find the closest node with gold
 
 
-  # binding.pry
+coalarr = []
+20.times do
+coalarr << GNode.new("coal")
+end
+goldarr = []
+3.times do 
+goldarr << GNode.new("gold")
+end
+
+g = Graph.create_from_nodes(coalarr.concat(goldarr))
+
+starting_node = coalarr.first
+ending_node = goldarr.first
+
+g.connect(0,1)
+g.connect(0,2)
+g.connect(0,3)
+g.connect(20, 3)
+g.connect(1,4)
+g.connect(2,5)
+g.connect(5,0)
+g.connect(3,6)
+g.connect(6,7)
+g.connect(5,8)
+g.connect(6,9)
+g.connect(3,10)
+g.connect(9,10)
+g.connect(10,11)
+g.connect(10,12)
+g.connect(12,13)
+g.connect(13,14)
+g.connect(14,15)
+g.connect(15,16)
+g.connect(15,18)
+g.connect(18,17)
+g.connect(18,19)
+g.connect(17,21)
+g.connect(19,22)
+
+binding.pry
 
