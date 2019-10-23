@@ -48,7 +48,7 @@ cohortBreaks = [
 let cliSectionWeeks = Array.from({length: 7}, (v, k) => k + 2);
 let sinatraSectionWeeks = Array.from({length: 8}, (v,k) => k + 9)
 let railsSectionWeeks = Array.from({length: 8}, (v,k) => k + 17)
-
+let javascriptSectionWeeks = Array.from({length: 8}, (v, k) => k + 25)
 
 // let sinatraSectionWeeks = []
 // for(i = 9; i <= 16; i++){
@@ -62,9 +62,9 @@ let weekOffset = Math.floor((cohortStart - Date.now()) / (7 * 24 * 60 * 60 * 100
 
 // MAP THE SECITON'S CURRICULUM TO YOUR COHORT SHEDULE TAKING INTO ACCOUNT BREAK WEEKS AND THE CURRENT DATE, USING THE APPROPRIATE SECTION WEEKS
 // THIS MUST BE EDITED TO THE SECTION YOU ARE ON
-let studygroupWeeks = railsSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
+// let studygroupWeeks = railsSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
 // let studygroupWeeks = sinatraSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
-
+let studygroupWeeks = javascriptSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
 
 
 
@@ -590,6 +590,169 @@ let railsSection = [
         categories: ['Rails Project Mode'],
         title: `${cohort} Rails Portfolio Project Hours`,
         description: 'Open Office Hours for your Rails Portfolio Project',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[7],
+        weekToEnd: studygroupWeeks[7],
+        zoom
+    }
+]
+
+let javascriptSection = [
+    {
+        categories: ['Introducing the DOM and Just Enough JavaScript'],
+        title: `${cohort} Intro to DOM and DOM Manipulation`,
+        description: 'Intro to Javascript and the DOM',
+        day: day1, 
+        time: time1,
+        weekToStart: studygroupWeeks[0],
+        weekToEnd: studygroupWeeks[0],
+        zoom
+    },
+    {
+        categories: ['Introducing the DOM and Just Enough JavaScript'],
+        title: `${cohort} Intro to DOM and DOM Manipulation`,
+        description: 'Intro to Javascript and the DOM',
+        day: day2, 
+        time: time2,
+        weekToStart: studygroupWeeks[0],
+        weekToEnd: studygroupWeeks[0],
+        zoom
+    },
+    {
+        categories: ['JavaScript Eventing'],
+        title: `${cohort} JS Events`, 
+        description: 'JavaScript Events',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[1],
+        weekToEnd: studygroupWeeks[1],
+        zoom
+    },
+    {
+        categories: ['JavaScript Eventing'],
+        title: `${cohort} JS Events`, 
+        description: 'JavaScript Events',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[1],
+        weekToEnd: studygroupWeeks[1],
+        zoom
+    },
+    {
+        categories: ['Use Fetch'],
+        title: `${cohort} Using Fetch`, 
+        description: 'AJAX and Fetch',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[2],
+        weekToEnd: studygroupWeeks[2],
+        zoom
+    },
+    {
+        categories: ['Use Fetch'],
+        title: `${cohort} Using Fetch`, 
+        description: 'AJAX and Fetch',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[2],
+        weekToEnd: studygroupWeeks[2],
+        zoom
+    },
+    {
+        categories: ['Rails as an API'],
+        title: `${cohort} Building a Rails API`, 
+        description: 'Build a Rails Backend for an API',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[3],
+        weekToEnd: studygroupWeeks[3],
+        zoom
+    },
+    {
+        categories: ['Rails as an APIs'],
+        title: `${cohort} Building a Rails API`, 
+        description: 'Build a Rails Backend for an API',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[3],
+        weekToEnd: studygroupWeeks[3],
+        zoom
+    },
+    {
+        categories: ['Functions in JavaScript'],
+        title: `${cohort} Advanced JavaScript Functions`, 
+        description: 'Learn how to make advanced functions in JS',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[4],
+        weekToEnd: studygroupWeeks[4],
+        zoom
+    },
+    {
+        categories: ['Functions in JavaScript'],
+        title: `${cohort} Advanced JavaScript Functions`, 
+        description: 'Learn how to make advanced functions in JS',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[4],
+        weekToEnd: studygroupWeeks[4],
+        zoom
+    },
+    {
+        categories: ['Object Orientation in JavaScript'],
+        title: `${cohort} Object Oriented JS`,
+        description: 'Write OO JS',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[5], 
+        weekToEnd: studygroupWeeks[5],
+        zoom
+    },
+    {
+        categories: ['Object Orientation in JavaScript'],
+        title: `${cohort} Object Oriented JS`,
+        description: 'Write OO JS',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[5], 
+        weekToEnd: studygroupWeeks[5],
+        zoom
+    },
+    {
+        categories: ['JavaScript and Rails'],
+        title: `${cohort} JavaScript and Rails Portfolio Project Prep`,
+        description: 'Preparation for your JavaScript and Rails Portfolio Project',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[6],
+        weekToEnd: studygroupWeeks[6],
+        zoom
+    },
+    {
+        categories: ['JavaScript and Rails'],
+        title: `${cohort} JavaScript and Rails Portfolio Project Prep`,
+        description: 'Preparation for your JavaScript and Rails Portfolio Project',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[6],
+        weekToEnd: studygroupWeeks[6],
+        zoom
+    },
+    {
+        categories: ['JavaScript and Rails'],
+        title: `${cohort} JavaScript and Rails Portfolio Project OOH`,
+        description: 'Open Office Hours for your JavaScript Rails Portfolio Project',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[7],
+        weekToEnd: studygroupWeeks[7],
+        zoom
+    },
+    {
+        categories: ['JavaScript and Rails'],
+        title: `${cohort}  JavaScript and Rails Portfolio Project OOH`,
+        description: 'Open Office Hours for your JavaScript Rails Portfolio Project',
         day: day2,
         time: time2,
         weekToStart: studygroupWeeks[7],

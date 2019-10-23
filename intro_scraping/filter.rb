@@ -22,6 +22,9 @@ parsed_cores = Nokogiri::HTML(cores_html)
 
 ### Look at webpage -> what info do we want?
 
+
+
+
 wood_types = parsed_woods.css(".jkr-writing-artefact__text h2").map(&:text)
 wood_descriptions = parsed_woods.css(".jkr-writing-artefact__text h2+p").map(&:text)
 
@@ -41,21 +44,24 @@ puts core_descriptions.length
 
 core_descriptions = core_descriptions.each.with_index.reduce([]){ |memo, (el, i)| i.even? ? memo << el : memo[memo.length - 1] += " #{el}"; memo}
 
+
+
+
 # puts core_descriptions.length
 # puts core_descriptions
 
 ## A more readable procedure: 
 
-# new_des = []
-# core_descriptions.each_with_index do |des, i|
-#     if i.even? 
-#         new_des << des
-#     else
-#         new_des[new_des.length - 1] += " #{des}"
-#     end
-# end
-# puts new_des.length
-# puts new_des
+new_des = []
+core_descriptions.each_with_index do |des, i|
+    if i.even? 
+        new_des << des
+    else
+        new_des[new_des.length - 1] += " #{des}"
+    end
+end
+puts new_des.length
+puts new_des
 
 
 ### Filtering Complete ###
@@ -63,19 +69,19 @@ core_descriptions = core_descriptions.each.with_index.reduce([]){ |memo, (el, i)
 
 # Note: Less elegant alternative (not as good @ CSS selectors)
 
-wood_types = parsed_woods.css("h2").map(&:text)
-puts wood_types.to_s
-wood_types = wood_types[1, wood_types.length - 2]
+# wood_types = parsed_woods.css("h2").map(&:text)
+# puts wood_types.to_s
+# wood_types = wood_types[1, wood_types.length - 2]
 
-# # OR (slightly less elegantly)
+# # # OR (slightly less elegantly)
 
-wood_types[0] = nil
-wood_types[-1] = nil
-wood_types = wood_types.compact
-puts wood_types.to_s
+# wood_types[0] = nil
+# wood_types[-1] = nil
+# wood_types = wood_types.compact
+# puts wood_types.to_s
 
-## OR
+# ## OR
 
-wood_types.pop
-wood_types.shift
-puts wood_types
+# wood_types.pop
+# wood_types.shift
+# puts wood_types

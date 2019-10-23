@@ -81,10 +81,10 @@ puts "Ready?"
 gets
 search_num = 327 * 10 ** 6 - 1
 puts "Starting Binary Search"
-puts binary_search(world_population, search_num)
+puts binary_search(world_population, search_num) # O(lgn)
 puts binary(world_population, search_num)
 puts "Starting Linear Search"
-puts linear_search(world_population, search_num)
+puts linear_search(world_population, search_num) # O(n)
 puts "Starting #find_index"
 puts world_population.find_index{ |item| Checks.rbfindcount += 1; item == search_num }
 puts "Binary search checks: #{Checks.bincount}"
