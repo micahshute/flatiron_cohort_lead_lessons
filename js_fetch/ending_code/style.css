@@ -1,0 +1,89 @@
+body {
+    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
+      sans-serif;
+    font-weight: 300;
+  }
+  
+  #container {
+    width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+  }
+  
+  #pokemon-search-form {
+    width: 500px;
+    margin: auto;
+    margin-top: 50px;
+  }
+  
+  #pokemon-search-input {
+    font-size: 3rem;
+    border: 3px solid #fecd2f;
+    color: #2d72fc;
+  }
+  
+  #pokemon-logo {
+    width: 300px;
+    margin-left: 330px;
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  
+  .pokemon-card {
+    float: left;
+    width: 250px;
+    margin: auto;
+  }
+  
+  .pokemon-frame {
+    width: 230px;
+    margin: 10px;
+    background: #fecd2f;
+    color: #2d72fc;
+  }
+  
+  .pokemon-image {
+    width: 96px;
+    margin: auto;
+  }
+  
+  .center-text {
+    text-align: center;
+  }
+  
+  .flip-image {
+    color: #2d72fc;
+  }
+  
+  #pokemon-post-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  #pokemon-post-form p {
+    font-size: 1.2rem;
+    color: #2d72fc;
+  }
+  
+  #pokemon-post-form input[type='text'] {
+    font-size: 2rem;
+    border: 3px solid #fecd2f;
+    color: #2d72fc;
+  }
+  
+  .pokemon-button {
+    font-size: 2rem;
+    border: 3px solid #2d72fc;
+    background-color: #fecd2f;
+    color: #2d72fc;
+  }
+  
+  .pokemon-button:hover {
+    background-color: #2d72fc;
+    color: #fecd2f;
+  }
+  
