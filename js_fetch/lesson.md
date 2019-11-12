@@ -1,5 +1,9 @@
 # SPA and Fetch
 
+# Videos:
+[Fetch](https://youtu.be/MyK0QEl8bjI)
+[SPA w/ Fetch](https://youtu.be/ZtlyGQJr-0k)
+
 ### Objectives:
 
 - Describe Single Page App -> start with a base HTML file which we will populate and change with JS as the user interacts with it.
