@@ -1,65 +1,91 @@
 
+const url = 'http://localhost:3000/pokemon'
 
-function renderPokemonCard(pokemon){
-    const cardDiv = document.createElement('div')
-    cardDiv.className = 'pokemon-card'
-    const frameDiv = document.createElement('div')
-    frameDiv.className = 'pokemon-frame'
-    const h1 = document.createElement('h1')
-    h1.className = 'center-text'
-    h1.innerText = pokemon.name
-    const imageDiv = document.createElement('div')
-    imageDiv.className = 'pokemon-image'
-    const img = document.createElement('img')
-    img.className = 'toggle-sprite'
-    img.src = pokemon.sprites.front
-    img.setAttribute('data-id', pokemon.id)
-    img.setAttribute('data-action', 'flip')
-    const btn = document.createElement('button')
-    btn.className = 'pokemon-button'
-    btn.setAttribute('data-action', 'delete')
-    btn.innerText = "Delete"
+const pokemonHTML = (pObj) => {
+    return (`
+    <div class="pokemon-card">
+        <div class="pokemon-frame">
+            <h1 class="center-text">${pObj.name}</h1>
+            <div class="pokemon-image">
+                <img data-id="${pObj.id}" data-action="flip" class="toggle-sprite" src="${pObj.sprites.front}">
+            </div>
+            <button data-action="delete" class="pokemon-button">Delete</button>
+        </div>
+    </div>`
+)}
 
-    cardDiv.appendChild(frameDiv)
-    frameDiv.appendChild(h1)
-    frameDiv.appendChild(imageDiv)
-    imageDiv.appendChild(img)
-    frameDiv.appendChild(btn)
-    return cardDiv
 
+const pokemonArrHTML = (pArr) => {
+    return pArr.map(p => pokemonHTML(p)).join('')
 }
 
-function renderAllPokemon(parr){
-    return parr.map(p => renderPokemonCard(p))
+const handleSearch = (e, pokemon, container) => {
+    const query = e.target.value
+    const pokeArr = pokemon.filter( p => p.name.toLowerCase().includes(query) )
+    container.innerHTML = pokemonArrHTML(pokeArr)
 }
 
-
-function handleSearch(e, allPokemon, container){
-    console.log(allPokemon)
-    const filteredPokemon = allPokemon.filter(pObj => {
-        return pObj.name.includes(e.target.value.toLowerCase())
-    })
-    const filteredObjs = renderAllPokemon(filteredPokemon)
-    container.innerHTML = ''
-    if(filteredObjs.length == 0){
-        container.innerHTML = "<p><center>There are no Pokemon here</center></p>"
-    }else{
-        for(let el of filteredObjs){
-            container.appendChild(el)
-        }
+const handleClick = (e, pokemon) => {
+    switch( e.target.dataset.action ){
+        case "flip":
+            const id = parseInt(e.target.dataset.id)
+            const poke = pokemon.find(p => p.id === id )
+            e.target.src = (e.target.src === poke.sprites.front) ? poke.sprites.back : poke.sprites.front
+            break
+        default:
+            
     }
 }
 
-// function renderPokemonCard(pokemon) {
-//     return (`
-//     <div class="pokemon-card">
-//       <div class="pokemon-frame">
-//         <h1 class="center-text">${pokemon.name}</h1>
-//         <div class="pokemon-image">
-//           <img data-id="${pokemon.id}" data-action="flip" class="toggle-sprite" src="${pokemon.sprites.front}">
-//         </div>
-//         <button data-action="delete" class="pokemon-button">Delete</button>
-//       </div>
-//     </div>`)
-//   }
-  
+
+const handleSubmit = (e, pokemon, container) => {
+    e.preventDefault()
+    e.stopImmediatePropagation()
+    const nameInput = e.target.querySelector('#name-input')
+    const urlInput = e.target.querySelector('#sprite-input')
+    const name = nameInput.value
+    const sprite = urlInput.value
+    const id = pokemon[pokemon.length - 1].id + 1
+    const method = 'POST'
+    const headers = {
+        'Content-Type': 'application/json'
+    }
+    const data = {
+        name,
+        id, 
+        sprites: {
+            front: sprite,
+            back: sprite
+        }
+    }
+
+    const body = JSON.stringify(data)
+    
+    const opt = { method, headers, body: data }
+    
+    fetch(url, opt)
+        .then(res => {
+            if(res.status !== 200){
+                throw new TypeError('BAD STATUS CODE!')
+            }
+            const contentType = res.headers.get('content-type')
+            if (!contentType || !contentType.includes('application/json')){
+                throw new TypeError("NOT JSON!!!")
+            }
+            
+            return res.json()
+        })
+        .then(json => {
+            pokemon.push(json)
+            container.innerHTML = pokemonArrHTML(pokemon)
+
+        })
+        .catch(err => { 
+            console.log(err)
+            container.innerHTML = pokemonArrHTML(pokemon)
+        })
+
+    const optimisticHTML = pokemonHTML(data)
+    container.innerHTML += optimisticHTML
+
+}
