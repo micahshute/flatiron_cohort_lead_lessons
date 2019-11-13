@@ -1,5 +1,7 @@
 # Rails API
 
+[Video](https://youtu.be/FjEJ2LLkxHk)
+
 ### Objectives
 
 - Understand WHY we want to use a Rails API
