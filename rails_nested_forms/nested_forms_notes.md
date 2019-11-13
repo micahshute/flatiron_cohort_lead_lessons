@@ -1,5 +1,7 @@
 - Starting project: https://github.com/micahshute/rails-nested-forms-lesson
 
+[Video](https://youtu.be/A-rX40taEJg)
+
 ### Objectives
 - Understand what nested forms are and why they would be desirable
 - Start with basic framework for an app with Projects and Tasks, implement nested forms

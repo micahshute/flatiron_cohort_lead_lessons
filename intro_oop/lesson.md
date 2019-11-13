@@ -1,2 +1,4 @@
 [Lesson Slideshow](https://docs.google.com/presentation/d/1q8aHtZuveTKJLZql6V4YRxbIwBreEcO6Ep-A5oK1UOA/edit?usp=sharing)
 [Lesson Notes](https://docs.google.com/document/d/1mcbQhKYPLy2BnDMcwUbE5_d0fdjgHDwE8IoIgg6AxAI/edit?usp=sharing)
+
+[Video](https://youtu.be/QEwuLXOSNHI)

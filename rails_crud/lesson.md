@@ -1,3 +1,6 @@
+[Video](https://youtu.be/YQjeC4VmwSQ)
+
+
 `rails new packing-list`
 
 - make README.md to plan migration:

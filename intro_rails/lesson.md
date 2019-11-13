@@ -1,4 +1,4 @@
-lesson slides?
+[Video](https://youtu.be/Okg92CgunrI)
 
 - `gem install rails`
 - navigate to appropriate file directory

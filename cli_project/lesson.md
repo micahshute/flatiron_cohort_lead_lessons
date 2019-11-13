@@ -1,5 +1,7 @@
 [Lesson Slides](https://docs.google.com/presentation/d/1SPkY7kc0sbftK_ifQ_wL0BWMpcKc3HUvvqqzg7iWtwg/edit?usp=sharing)
 
+[Video](https://youtu.be/YJoL67FoXR0)
+
 - Make a new gem via `bundle gem <gemname>`
 - Put all of your `require` statements in `<gemname>.rb`
     - You can change the name to `environment.rb` if you'd like

@@ -1,5 +1,6 @@
 [Lesson Slides](https://docs.google.com/presentation/d/142KIVPbJRMtFsrHuonXkJkbEkvIyMy3OXHteFZZe5tQ/edit?usp=sharing)
 
+[Video](https://youtu.be/i0avkuHmBFg)
 
 ### Live Coding Guide
 

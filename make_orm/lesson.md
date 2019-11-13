@@ -1,5 +1,7 @@
 ### Build ORM From Scratch
 
+[Video](https://youtu.be/xrIkx5wAwug)
+
 #### Objectives
 
 Let's build a twitter CLI that allows a user to make and read tweets. All tweets will be saved in a SQLite3 database, which can be read by ruby and turned into Tweet objects.
