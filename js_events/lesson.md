@@ -1,4 +1,7 @@
+[Video](https://youtu.be/8WFLaRzxYtw)
+
 # Intro to Events
+
 
 - Why?
     - user interacts with a webpage and expects instant updates to the DOM
