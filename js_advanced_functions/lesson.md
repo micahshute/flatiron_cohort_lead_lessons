@@ -178,7 +178,7 @@ console.log(sum) // 28
 
 this: inside a function, this is the object that represents the function's execution context. For a function made with the `function` keyword, this is the object that it was called on. For an arrow function, `this` will be whatever `this` was in its `lexical scope` (eg what `this` was in its outside environment at the location of definition)
 
-call: allows us to call a method while manually defining `this`. `methodToCall.call(whatThisShouldBe, arg1, arg2, ...)`
+call: allows us to call a method while manually defining this.   `methodToCall.call(whatThisShouldBe, arg1, arg2, ...)`
 
 apply: Same as call, but args go in an array as the second argument: `methodToCall.apply(whatThisShouldBe, [arg1, arg2, ...])`
 
