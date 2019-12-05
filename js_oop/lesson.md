@@ -357,3 +357,76 @@ console.log(arcanine.HTML)
 
 
 ```
+
+
+```js
+class Pokemon{
+
+    constructor(params){
+        this.id = params.id
+        this.name = params.name
+        this.types = params.types
+    }
+
+
+    get html(){
+        return(`
+            <div class="pokemon-card">
+                <h3>${this.id} - ${this.name}</h3>
+                <ul>
+                    ${this.createTypeLis()}
+                </ul>
+            </div>
+        `)
+    }
+
+
+    createTypeLis(){
+        return this.types.map(type => {
+            return `<li>${type}</li>`
+        }).join('')
+    }
+
+
+}
+
+class PokemonAdapter{
+
+
+    static fakeFetchAll(){
+        const json = [
+            {id: 182, name: 'Arcanine', types: ['Fire', 'Water']},
+            {id: 1, name: "Bulbasaur", types: ['Grass', 'Poison']},
+            {id: 4, name: "Squirtle", types: ['Water']}
+        
+        ]
+        return json
+    }
+}
+
+class PageManager{
+
+    constructor(){
+        this.container = {innerHTML: ''}
+        this.adapter = PokemonAdapter
+        this.pokemon = []
+        this.fakeFetchPokemon()
+    }
+
+    fakeFetchPokemon(){
+        const json = this.adapter.fakeFetchAll()
+        this.pokemon = json.map(o => new Pokemon(o))
+        this.render()
+    }
+
+    render(){
+        this.container.innerHTML = this.pokemon.map(p => p.html).join('')
+        console.log(this.container.innerHTML)
+    }
+
+}
+
+
+new PageManager()
+
+```

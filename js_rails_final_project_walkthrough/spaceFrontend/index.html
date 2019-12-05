@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Space is fun</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="src/machines/physicsMachine.js"></script>
+    <script src="src/adapters/massAdapter.js"></script>
+    <script src="src/components/mass.js"></script>
+    <script src="src/components/universe.js"></script>
+    <script src="src/components/massSelector.js"></script>
+    <script src="src/components/app.js"></script>
+    <script src="src/index.js"></script>
+</head>
+<body>
+    <div id='app-container'>
+
+        <div id='mass-selector'>
+            <button id='add-mass'>Add Mass</button>
+            <form id='add-mass-form'>
+                <input type="text" id="mass-name" placeholder="Name" style="display: none">
+                <input type="text" id="mass-radius" placeholder="Name" style="display: none">
+                <input type="text" id="mass-mass" placeholder="Mass in kg" style="display: none">
+                <input type="submit" id="sumbit-mass" style="display:none" value="Save">
+            </form>
+            <div id="all-masses">
+
+
+            </div>
+        </div>
+
+        <div id="universe">
+
+            <button id="begin-sim">Begin Simulation</button>
+            <button id="zoom-in">Zoom In</button>
+            <button id="zoom-out">Zoom Out</button>
+            <button id="clear-sim">Clear Simulation</button>
+            <p>Initial Velocity X: <input type="number" id="xvel" value=0> m/s (right)</p>
+            <p>Initial Velocity Y: <input type="number" id="yvel" value=0> m/s (down)</p>
+            <p>Speed Ratio: <input type="number" id="speed-ratio" value=1> times RL</p>
+            <div id="universe-sim">
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+</html>

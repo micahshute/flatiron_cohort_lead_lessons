@@ -1,0 +1,35 @@
+
+
+body{
+    background: #fffff0
+}
+
+
+.circle{
+    border-radius: 100%;
+    background: black;
+    margin: 20px; 
+}
+
+#universe-sim{
+    position: relative;
+    border: 10px solid black;
+    width: 10000px;
+    height: 10000px;
+    background: gray;
+    border-radius: 10px;
+}
+
+.mass-border{
+    border: 3px solid black;
+    margin: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#all-masses{
+    overflow-y: scroll;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
