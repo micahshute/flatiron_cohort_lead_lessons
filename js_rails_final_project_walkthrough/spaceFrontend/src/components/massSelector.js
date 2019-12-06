@@ -40,9 +40,12 @@ class MassSelector{
     }
 
     async fetchAndLoadMasses(){
+
         this.masses = await Mass.retrieveAll()
         this.render()
+
     }
+
 
     render(){
         this.allMassesContainer.innerHTML = this.masses.map(mass => mass.htmlWithLabel).join('')
