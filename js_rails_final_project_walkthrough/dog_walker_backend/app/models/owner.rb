@@ -6,6 +6,10 @@ class Owner < ApplicationRecord
 
   has_many :dogs
 
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :address, presence: true
+
   devise :database_authenticatable,
           :jwt_authenticatable,
           :registerable,
