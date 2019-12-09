@@ -1,4 +1,4 @@
-class SignupAdapter{
+class LoginAdapter{
 
     constructor(baseAdapter){
         this.baseAdapter = baseAdapter
@@ -13,8 +13,8 @@ class SignupAdapter{
         return this.baseAdapter.headers
     }
 
-    async signup(params){
-        const res = await fetch(`${this.baseURL}/signup`, {
+    async login(params){
+        const res = await fetch(`${this.baseURL}/login`, {
             method: 'POST',
             headers: this.headers,
             body: JSON.stringify(params)
