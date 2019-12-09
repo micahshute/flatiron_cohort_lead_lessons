@@ -9,6 +9,7 @@ class Universe{
                 this.mass = mass.mass
                 this.name = mass.name
                 this.radius = mass.radius
+                this.speedRatioValue = 1
             }
 
 
@@ -45,7 +46,9 @@ class Universe{
 
 
         this.simContainer.addEventListener('click', this.handleSimClick.bind(this))
-
+        this.beginSimulationButton.addEventListener('click', this.toggleSimHandler.bind(this))
+        this.speedRatio.addEventListener('change', this.changeSpeedRatio.bind(this))
+        this.clearSim.addEventListener('click', this.clearSimulation.bind(this))
     }
 
     addMass(mass, location){
@@ -56,6 +59,41 @@ class Universe{
         const decMass = new Universe.MassDecorator(mass, location, velocity)
         this.masses.push(decMass)
         console.log(decMass)
+        this.render()
+    }
+
+    toggleSimHandler(e){
+        if(this.simulating){
+            this.simulating = false
+            clearInterval(this.simulationInterval)
+            e.target.innerText = 'Begin Simulation'
+        }else{
+            this.simulating = true
+            e.target.innerText = 'Stop Simulation'
+            this.simulationInterval = setInterval(this.simulationUpdater.bind(this), 1)
+        }
+    }
+
+    simulationUpdater(){
+        const massForces = this.masses.map(m => ({
+            mass: m, 
+            force: this.physicsMachine.allForcesForMass(m, this.masses)
+        }))
+        for(let massForce of massForces ){
+            this.physicsMachine.updateMass(massForce.mass, massForce.force, this.speedRatioValue)
+        }
+        this.render()
+    }
+
+    changeSpeedRatio(e){
+        const newRatio = parseInt(e.target.value)
+        if(newRatio > 0){
+            this.speedRatioValue = newRatio
+        }
+    }
+
+    clearSimulation(){
+        this.masses = []
         this.render()
     }
 
