@@ -1,5 +1,6 @@
 # Frontend Heavy
-
+[PT 1 *Frontend*](https://youtu.be/kuEHDf2iyTE) 
+[PT 2 *Frontend*](https://youtu.be/YbWi7o_tcwU)
 ```
 mkdir gravity_frontend
 cd gravity_frontend

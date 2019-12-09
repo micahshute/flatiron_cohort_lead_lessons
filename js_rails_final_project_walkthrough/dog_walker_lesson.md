@@ -1,3 +1,8 @@
+[Part 1 (backend)](https://youtu.be/qjtht03t7z4)
+[Part 2 (frontend)](https://youtu.be/6ZmELSXyeAc)
+[Part 3 (frontend)](https://youtu.be/_c_nGmP07Fg)
+[Part 4 (frontend)](https://youtu.be/Y47MYgL4ngQ)
+
 # JS Rails SPA Walkthrough - Dog Walker App
 
 ## Cookies vs JWT
