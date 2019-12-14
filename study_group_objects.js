@@ -1,6 +1,6 @@
 // CUSTOMIZE THESE VARIABLES
 
-let cohortStartDate = '12/09/19'
+let cohortStartDate = '4/15/19'
 let cohortType = 'Part Time'
 let day1= 'Tuesday'
 let time1 = '6:00 pm'
@@ -49,7 +49,7 @@ let cliSectionWeeks = Array.from({length: 7}, (v, k) => k + 2);
 let sinatraSectionWeeks = Array.from({length: 8}, (v,k) => k + 9)
 let railsSectionWeeks = Array.from({length: 8}, (v,k) => k + 17)
 let javascriptSectionWeeks = Array.from({length: 8}, (v, k) => k + 25)
-
+let reactSectionWeeks = Array.from({length: 8}, (v,k) => k + 33)
 // let sinatraSectionWeeks = []
 // for(i = 9; i <= 16; i++){
 //     sinatraSectionWeeks.push(i)
@@ -444,6 +444,11 @@ let sinatraSection = [
 // Generic Rails Objects
 
 let railsSection = [
+    
+]
+
+
+let reactSection = [
     {
         categories: ['Intro to Rails','Rails MVC'],
         title: `${cohort} Intro to Rails`,
@@ -609,8 +614,8 @@ let railsSection = [
 let javascriptSection = [
     {
         categories: ['Introducing the DOM and Just Enough JavaScript'],
-        title: `${cohort} Intro to DOM and DOM Manipulation`,
-        description: 'Intro to Javascript and the DOM',
+        title: `${cohort} Intro to React & Props`,
+        description: 'Intro to React & Props',
         day: day1,
         time: time1,
         weekToStart: studygroupWeeks[0],
@@ -619,8 +624,8 @@ let javascriptSection = [
     },
     {
         categories: ['Introducing the DOM and Just Enough JavaScript'],
-        title: `${cohort} Intro to DOM and DOM Manipulation`,
-        description: 'Intro to Javascript and the DOM',
+        title: `${cohort} Intro to React & Props`,
+        description: 'Intro to React & Props',
         day: day2,
         time: time2,
         weekToStart: studygroupWeeks[0],
@@ -629,8 +634,8 @@ let javascriptSection = [
     },
     {
         categories: ['JavaScript Eventing'],
-        title: `${cohort} JS Events`,
-        description: 'JavaScript Events',
+        title: `${cohort}  React State, Events, Forms`,
+        description: 'React State, Events, Forms',
         day: day1,
         time: time1,
         weekToStart: studygroupWeeks[1],
@@ -639,8 +644,8 @@ let javascriptSection = [
     },
     {
         categories: ['JavaScript Eventing'],
-        title: `${cohort} JS Events`,
-        description: 'JavaScript Events',
+        title: `${cohort} React State, Events, Forms`,
+        description: 'React State, Events, Forms',
         day: day2,
         time: time2,
         weekToStart: studygroupWeeks[1],
@@ -649,7 +654,7 @@ let javascriptSection = [
     },
     {
         categories: ['Use Fetch'],
-        title: `${cohort} Using Fetch`,
+        title: `${cohort} React Lifecycle Methods`,
         description: 'AJAX and Fetch',
         day: day1,
         time: time1,
@@ -659,7 +664,7 @@ let javascriptSection = [
     },
     {
         categories: ['Use Fetch'],
-        title: `${cohort} Using Fetch`,
+        title: `${cohort} React Lifecycle Methods`,
         description: 'AJAX and Fetch',
         day: day2,
         time: time2,
@@ -669,8 +674,8 @@ let javascriptSection = [
     },
     {
         categories: ['Rails as an API'],
-        title: `${cohort} Building a Rails API`,
-        description: 'Build a Rails Backend for an API',
+        title: `${cohort} Presentational vs Container Components`,
+        description: 'Presentational vs Container Components',
         day: day1,
         time: time1,
         weekToStart: studygroupWeeks[3],
@@ -679,8 +684,8 @@ let javascriptSection = [
     },
     {
         categories: ['Rails as an APIs'],
-        title: `${cohort} Building a Rails API`,
-        description: 'Build a Rails Backend for an API',
+        title: `${cohort} Presentational vs Container Components`,
+        description: 'Presentational vs Container Components',
         day: day2,
         time: time2,
         weekToStart: studygroupWeeks[3],
@@ -689,8 +694,8 @@ let javascriptSection = [
     },
     {
         categories: ['Functions in JavaScript'],
-        title: `${cohort} Advanced JavaScript Functions`,
-        description: 'Learn how to make advanced functions in JS',
+        title: `${cohort} Intro to Client Side Routing`,
+        description: 'Intro to Client Side Routing',
         day: day1,
         time: time1,
         weekToStart: studygroupWeeks[4],
@@ -699,8 +704,8 @@ let javascriptSection = [
     },
     {
         categories: ['Functions in JavaScript'],
-        title: `${cohort} Advanced JavaScript Functions`,
-        description: 'Learn how to make advanced functions in JS',
+        title: `${cohort} Intro to Client Side Routing`,
+        description: 'Intro to Client Side Routing',
         day: day2,
         time: time2,
         weekToStart: studygroupWeeks[4],
@@ -709,8 +714,8 @@ let javascriptSection = [
     },
     {
         categories: ['Object Orientation in JavaScript'],
-        title: `${cohort} Object Oriented JS`,
-        description: 'Write OO JS',
+        title: `${cohort} Intro to Redux & Async`,
+        description: 'Intro to Redux & Async',
         day: day1,
         time: time1,
         weekToStart: studygroupWeeks[5],
@@ -719,8 +724,8 @@ let javascriptSection = [
     },
     {
         categories: ['Object Orientation in JavaScript'],
-        title: `${cohort} Object Oriented JS`,
-        description: 'Write OO JS',
+        title: `${cohort} Intro to Redux & Async`,
+        description: 'Intro to Redux & Async',
         day: day2,
         time: time2,
         weekToStart: studygroupWeeks[5],
@@ -729,7 +734,7 @@ let javascriptSection = [
     },
     {
         categories: ['JavaScript and Rails'],
-        title: `${cohort} JavaScript and Rails Portfolio Project Prep`,
+        title: `${cohort} Let’s Build Redux From Scratch`,
         description: 'Preparation for your JavaScript and Rails Portfolio Project',
         day: day1,
         time: time1,
@@ -739,7 +744,7 @@ let javascriptSection = [
     },
     {
         categories: ['JavaScript and Rails'],
-        title: `${cohort} JavaScript and Rails Portfolio Project Prep`,
+        title: `${cohort} Let’s Build Redux From Scratch`,
         description: 'Preparation for your JavaScript and Rails Portfolio Project',
         day: day2,
         time: time2,
@@ -749,8 +754,8 @@ let javascriptSection = [
     },
     {
         categories: ['JavaScript and Rails'],
-        title: `${cohort} JavaScript and Rails Portfolio Project OOH`,
-        description: 'Open Office Hours for your JavaScript Rails Portfolio Project',
+        title: `${cohort} React Final Project OOH`,
+        description: 'React Final Project OOH',
         day: day1,
         time: time1,
         weekToStart: studygroupWeeks[7],
@@ -759,7 +764,7 @@ let javascriptSection = [
     },
     {
         categories: ['JavaScript and Rails'],
-        title: `${cohort}  JavaScript and Rails Portfolio Project OOH`,
+        title: `${cohort}  React Final Project OOH`,
         description: 'Open Office Hours for your JavaScript Rails Portfolio Project',
         day: day2,
         time: time2,
