@@ -64,8 +64,8 @@ let weekOffset = Math.floor((cohortStart - Date.now()) / (7 * 24 * 60 * 60 * 100
 // THIS MUST BE EDITED TO THE SECTION YOU ARE ON
 // let studygroupWeeks = railsSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
 // let studygroupWeeks = sinatraSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
-let studygroupWeeks = javascriptSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
-
+// let studygroupWeeks = javascriptSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
+let studygroupWeeks = reactSectionWeeks.map(x => (cohortWeekToRelativeWeek(x, cohortStart, cohortBreaks) + weekOffset))
 
 
 
@@ -91,7 +91,6 @@ function cohortWeekToRelativeWeek(week, csd, cohortBreaks){
         // console.log('-------------')
     }
     // console.log('realtive week, breakWeekCount', week, breakWeeks)
-    // return week + breakWeeks
     return weekStart
 }
 
@@ -444,11 +443,6 @@ let sinatraSection = [
 // Generic Rails Objects
 
 let railsSection = [
-    
-]
-
-
-let reactSection = [
     {
         categories: ['Intro to Rails','Rails MVC'],
         title: `${cohort} Intro to Rails`,
@@ -614,8 +608,8 @@ let reactSection = [
 let javascriptSection = [
     {
         categories: ['Introducing the DOM and Just Enough JavaScript'],
-        title: `${cohort} Intro to React & Props`,
-        description: 'Intro to React & Props',
+        title: `${cohort} Intro to JavaScript`,
+        description: 'Intro to JavaScript',
         day: day1,
         time: time1,
         weekToStart: studygroupWeeks[0],
@@ -624,8 +618,8 @@ let javascriptSection = [
     },
     {
         categories: ['Introducing the DOM and Just Enough JavaScript'],
-        title: `${cohort} Intro to React & Props`,
-        description: 'Intro to React & Props',
+        title: `${cohort} Intro to JavaScript`,
+        description: 'Intro to JavaScript',
         day: day2,
         time: time2,
         weekToStart: studygroupWeeks[0],
@@ -634,8 +628,8 @@ let javascriptSection = [
     },
     {
         categories: ['JavaScript Eventing'],
-        title: `${cohort}  React State, Events, Forms`,
-        description: 'React State, Events, Forms',
+        title: `${cohort}  JavaScript Events and DOM Manipulation`,
+        description: 'JavaScript Events and DOM Manipulation',
         day: day1,
         time: time1,
         weekToStart: studygroupWeeks[1],
@@ -644,8 +638,8 @@ let javascriptSection = [
     },
     {
         categories: ['JavaScript Eventing'],
-        title: `${cohort} React State, Events, Forms`,
-        description: 'React State, Events, Forms',
+        title: `${cohort} JavaScript Events and DOM Manipulation`,
+        description: 'JavaScript Events and DOM Manipulation',
         day: day2,
         time: time2,
         weekToStart: studygroupWeeks[1],
@@ -654,7 +648,7 @@ let javascriptSection = [
     },
     {
         categories: ['Use Fetch'],
-        title: `${cohort} React Lifecycle Methods`,
+        title: `${cohort} AJAX and Fetch`,
         description: 'AJAX and Fetch',
         day: day1,
         time: time1,
@@ -664,7 +658,7 @@ let javascriptSection = [
     },
     {
         categories: ['Use Fetch'],
-        title: `${cohort} React Lifecycle Methods`,
+        title: `${cohort} Using Fetch`,
         description: 'AJAX and Fetch',
         day: day2,
         time: time2,
@@ -674,8 +668,8 @@ let javascriptSection = [
     },
     {
         categories: ['Rails as an API'],
-        title: `${cohort} Presentational vs Container Components`,
-        description: 'Presentational vs Container Components',
+        title: `${cohort} Building a Rails API`,
+        description: 'Make a RoR API to use with your JS frontend',
         day: day1,
         time: time1,
         weekToStart: studygroupWeeks[3],
@@ -684,8 +678,8 @@ let javascriptSection = [
     },
     {
         categories: ['Rails as an APIs'],
-        title: `${cohort} Presentational vs Container Components`,
-        description: 'Presentational vs Container Components',
+        title: `${cohort} Building a Rails API`,
+        description: 'Make a RoR API to use with your JS frontend',
         day: day2,
         time: time2,
         weekToStart: studygroupWeeks[3],
@@ -694,8 +688,8 @@ let javascriptSection = [
     },
     {
         categories: ['Functions in JavaScript'],
-        title: `${cohort} Intro to Client Side Routing`,
-        description: 'Intro to Client Side Routing',
+        title: `${cohort} Advanced JS Functions`,
+        description: 'Advanced Functions in JavaScript',
         day: day1,
         time: time1,
         weekToStart: studygroupWeeks[4],
@@ -704,8 +698,8 @@ let javascriptSection = [
     },
     {
         categories: ['Functions in JavaScript'],
-        title: `${cohort} Intro to Client Side Routing`,
-        description: 'Intro to Client Side Routing',
+        title: `${cohort} Advanced JS Functions`,
+        description: 'Advanced Functions in JavaScript',
         day: day2,
         time: time2,
         weekToStart: studygroupWeeks[4],
@@ -714,8 +708,8 @@ let javascriptSection = [
     },
     {
         categories: ['Object Orientation in JavaScript'],
-        title: `${cohort} Intro to Redux & Async`,
-        description: 'Intro to Redux & Async',
+        title: `${cohort} Object Oriented JS`,
+        description: 'Object Oriented JavaScript',
         day: day1,
         time: time1,
         weekToStart: studygroupWeeks[5],
@@ -724,8 +718,8 @@ let javascriptSection = [
     },
     {
         categories: ['Object Orientation in JavaScript'],
-        title: `${cohort} Intro to Redux & Async`,
-        description: 'Intro to Redux & Async',
+        title: `${cohort} Object Oriented JS`,
+        description: 'Object Oriented JavaScript',
         day: day2,
         time: time2,
         weekToStart: studygroupWeeks[5],
@@ -734,7 +728,7 @@ let javascriptSection = [
     },
     {
         categories: ['JavaScript and Rails'],
-        title: `${cohort} Let’s Build Redux From Scratch`,
+        title: `${cohort} JavaScript/Rails Project Overview`,
         description: 'Preparation for your JavaScript and Rails Portfolio Project',
         day: day1,
         time: time1,
@@ -744,7 +738,7 @@ let javascriptSection = [
     },
     {
         categories: ['JavaScript and Rails'],
-        title: `${cohort} Let’s Build Redux From Scratch`,
+        title: `${cohort} JavaScript/Rails Project Overview`,
         description: 'Preparation for your JavaScript and Rails Portfolio Project',
         day: day2,
         time: time2,
@@ -754,8 +748,8 @@ let javascriptSection = [
     },
     {
         categories: ['JavaScript and Rails'],
-        title: `${cohort} React Final Project OOH`,
-        description: 'React Final Project OOH',
+        title: `${cohort} JavaScript Final Project OOH`,
+        description: 'Open Office Hours for your JavaScript Rails Portfolio Project',
         day: day1,
         time: time1,
         weekToStart: studygroupWeeks[7],
@@ -764,7 +758,7 @@ let javascriptSection = [
     },
     {
         categories: ['JavaScript and Rails'],
-        title: `${cohort}  React Final Project OOH`,
+        title: `${cohort}  JavaScript Final Project OOH`,
         description: 'Open Office Hours for your JavaScript Rails Portfolio Project',
         day: day2,
         time: time2,
@@ -775,7 +769,172 @@ let javascriptSection = [
 ]
 
 
-let sgData = cliSection
+
+let reactSection = [
+    {
+        categories: ['Introduction to React'],
+        title: `${cohort} Intro to React & Props`,
+        description: 'Intro to React & Props',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[0],
+        weekToEnd: studygroupWeeks[0],
+        zoom
+    },
+    {
+        categories: ['Introduction to React'],
+        title: `${cohort} Intro to React & Props`,
+        description: 'Intro to React & Props',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[0],
+        weekToEnd: studygroupWeeks[0],
+        zoom
+    },
+    {
+        categories: ['Props and State'],
+        title: `${cohort}  React State, Events, Forms`,
+        description: 'React State, Events, Forms',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[1],
+        weekToEnd: studygroupWeeks[1],
+        zoom
+    },
+    {
+        categories: ['Props and State'],
+        title: `${cohort} React State, Events, Forms`,
+        description: 'React State, Events, Forms',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[1],
+        weekToEnd: studygroupWeeks[1],
+        zoom
+    },
+    {
+        categories: ['Lifecycle Methods'],
+        title: `${cohort} React Lifecycle Methods`,
+        description: 'React Lifecycle Methods',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[2],
+        weekToEnd: studygroupWeeks[2],
+        zoom
+    },
+    {
+        categories: ['Lifecycle Methods'],
+        title: `${cohort} React Lifecycle Methods`,
+        description: 'React Lifecycle Methods',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[2],
+        weekToEnd: studygroupWeeks[2],
+        zoom
+    },
+    {
+        categories: ['Container Components'],
+        title: `${cohort} Presentational vs Container Components`,
+        description: 'Presentational vs Container Components',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[3],
+        weekToEnd: studygroupWeeks[3],
+        zoom
+    },
+    {
+        categories: ['Container Components'],
+        title: `${cohort} Presentational vs Container Components`,
+        description: 'Presentational vs Container Components',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[3],
+        weekToEnd: studygroupWeeks[3],
+        zoom
+    },
+    {
+        categories: ['Client-Side Routing'],
+        title: `${cohort} Intro to Client Side Routing`,
+        description: 'Intro to Client Side Routing',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[4],
+        weekToEnd: studygroupWeeks[4],
+        zoom
+    },
+    {
+        categories: ['Client-Side Routing'],
+        title: `${cohort} Intro to Client Side Routing`,
+        description: 'Intro to Client Side Routing',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[4],
+        weekToEnd: studygroupWeeks[4],
+        zoom
+    },
+    {
+        categories: ['Redux'],
+        title: `${cohort} Intro to Redux & Async`,
+        description: 'Intro to Redux & Async',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[5],
+        weekToEnd: studygroupWeeks[5],
+        zoom
+    },
+    {
+        categories: ['Redux'],
+        title: `${cohort} Intro to Redux & Async`,
+        description: 'Intro to Redux & Async',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[5],
+        weekToEnd: studygroupWeeks[5],
+        zoom
+    },
+    {
+        categories: ['Redux'],
+        title: `${cohort} Let’s Build Redux From Scratch`,
+        description: 'Understand Redux and prep for React/Redux final project',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[6],
+        weekToEnd: studygroupWeeks[6],
+        zoom
+    },
+    {
+        categories: ['Redux'],
+        title: `${cohort} Let’s Build Redux From Scratch`,
+        description: 'Understand Redux and prep for React/Redux final project',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[6],
+        weekToEnd: studygroupWeeks[6],
+        zoom
+    },
+    {
+        categories: ['React Redux Portfolio Project'],
+        title: `${cohort} React Final Project OOH`,
+        description: 'React Final Project OOH',
+        day: day1,
+        time: time1,
+        weekToStart: studygroupWeeks[7],
+        weekToEnd: studygroupWeeks[7],
+        zoom
+    },
+    {
+        categories: ['React Redux Portfolio Project'],
+        title: `${cohort}  React Final Project OOH`,
+        description: 'React Final Project OOH',
+        day: day2,
+        time: time2,
+        weekToStart: studygroupWeeks[7],
+        weekToEnd: studygroupWeeks[7],
+        zoom
+    }
+]
+
+
+let sgData = reactSection
 
 // Shorten element selectors
 const byId = id => document.getElementById(id);
@@ -874,7 +1033,9 @@ const calculateDate = (day, week) => {
 		Sunday: 6
 	};
   
-	const d = addDays(dates[day], new Date(week))  
+    const d = addDays(dates[day], vacationMonday(new Date(week)))
+    // console.log(week)
+    // console.log(new Date(week))
   return getFormattedDate(d);
 };
 
@@ -921,15 +1082,15 @@ const init = async () => {
 	for await (sg of sgData) {
 		const time = sg.time.toLowerCase();
 		const formattedTime = formatTime(time);
-
+        const week = sg.weekToStart
 		// Calling the range function with weekToStart being 2 and weekToEnd being 5: [...range(2, 5)] will e.g. return [2,3,4,5]
-		function* range(weekToStart, weekToEnd) {
-			yield weekToStart;
-			if (weekToStart === weekToEnd) return;
-			yield* range(weekToStart + 1, weekToEnd);
-		}
+		// function* range(weekToStart, weekToEnd) {
+		// 	yield weekToStart;
+		// 	if (weekToStart === weekToEnd) return;
+		// 	yield* range(weekToStart + 1, weekToEnd);
+		// }
 
-		for await (week of [...range(sg.weekToStart, sg.weekToEnd)]) {
+		// for await (week of [...range(sg.weekToStart, sg.weekToEnd)]) {
 			await openModal();
 			await addTitle(sg.title);
 			await addDescription(sg.description);
@@ -944,7 +1105,7 @@ const init = async () => {
 			await submit();
 			await closeModal();
 			console.log(sg);
-		}
+		// }
 	}
 };
 
@@ -959,7 +1120,7 @@ const init2 = async () => {
 			if (weekToStart === weekToEnd) return;
 			yield* range(weekToStart + 1, weekToEnd);
 		}
-
+        // console.log(sg.weekToStart)
 		for (week of [...range(sg.weekToStart, sg.weekToEnd)]) {
 
 			console.log(`Title: ${sg.title}`);
