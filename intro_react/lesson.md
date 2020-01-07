@@ -2,6 +2,8 @@
 
 ## What is React?
 
+A framework built in JS to make frontends
+
 ## JSX and Babel
 
 ### What is JSX?
@@ -118,19 +120,24 @@ class Card extends React.Component {
 
 ### What files did this give us?
 
-`package.json` -> metadata, dependencies
-`yarn.lock` -> auto-generated; "locks" in all the dependencies and sub-dependencies (like Gemfile.lock)
-`public` directory -> static files (images, index.html)
-`src` directory -> where we code:
-    - `index.js` = entry point
-        - imports our files
-        - ReactDOM.render -> renders our <App /> element to the dom (ReactDOM vs React Native)
-        - 2 args: App and the HTML element
-    - App.js -> the component rendered to the screen
-        - Class components extend Component
-        - need a render funciton
-        - Now react gives App to you as a funcitonal component
-        - Classes give us lifecycle methods and state, but now with `React Hooks` we get those in functional components
+`package.json` -> metadata, dependencies  
+
+`yarn.lock` -> auto-generated; "locks" in all the dependencies and sub-dependencies (like Gemfile.lock)  
+
+`public` directory -> static files (images, index.html)  
+
+`src` directory -> where we code:  
+
+- `index.js` = entry point
+    - imports our files
+    - ReactDOM.render -> renders our <App /> element to the dom (ReactDOM vs React Native)
+    - 2 args: App and the HTML element
+- App.js -> the component rendered to the screen
+    - Class components extend Component
+    - need a render funciton
+    - Now react gives App to you as a funcitonal component
+    - Classes give us lifecycle methods and state, but now with `React Hooks` we get those in functional components
+    
 - start with `yarn start`
 
 - Show that any changes get immediately loaded
