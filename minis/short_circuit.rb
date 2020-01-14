@@ -121,3 +121,7 @@ puts my_dog && my_dog.name
 ## will be set to our local variable `name`. 
 
 ## Try it out on your own! Try to make use of short circuiting with ||, which also has some cool uses!
+
+
+
+
