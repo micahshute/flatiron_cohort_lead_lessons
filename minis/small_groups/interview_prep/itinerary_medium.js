@@ -37,8 +37,16 @@
     // remove that pair from the arr
 // return itinerary
 
+// For example, given the list of flights 
+// [('SFO', 'HKO'), ('YYZ', 'SFO'), ('YUL', 'YYZ'), ('HKO', 'ORD')] 
+// and starting airport 'YUL', you should return the list 
+// ['YUL', 'YYZ', 'SFO', 'HKO', 'ORD'].
 
 
+// [('A', 'B'), ('A', 'C'), ('B', 'C'), ('C', 'A')] 
+// and starting airport 'A', you should return the list 
+// ['A', 'B', 'C', 'A', 'C'] even though 
+// ['A', 'C', 'A', 'B', 'C'] is also a valid itinerary. 
 
 
 
@@ -91,6 +99,8 @@
 
 
 
+
+
 // Using Hashes:
 // Turn input into hash of departure: [arrivals] kv pairs. sort arrivals
 // itinerary = [currentDeparture]
@@ -100,6 +110,14 @@
     // shift off first index of array value of the key, add to itinerary
     // if array is now empty, remove key
 // return itinerary
+
+
+// [('A', 'B'), ('A', 'C'), ('D', 'A'), ('C', 'D')] 
+// and starting airport 'A', you should return the list 
+// ['A', 'B', 'C', 'A', 'C'] even though 
+// ['A', 'C', 'A', 'B', 'C'] is also a valid itinerary. 
+
+//TODO: Update solution that actually works
 
 function createItinerary(adList, start){
     const arrDepHash = {}
@@ -115,7 +133,10 @@ function createItinerary(adList, start){
     while(Object.keys(arrDepHash).length > 0){
         const currentDeparture = itinerary[itinerary.length - 1]
         const nextDestinationList = arrDepHash[currentDeparture]
-        if(!nextDestinationList){ return null }
+        if(!nextDestinationList){ 
+            return null
+
+        }
         const nextDestination = nextDestinationList.shift()
         itinerary.push(nextDestination)
         if(nextDestinationList.length <= 0){ delete arrDepHash[currentDeparture]}
