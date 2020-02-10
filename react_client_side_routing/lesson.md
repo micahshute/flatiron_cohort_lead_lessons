@@ -186,3 +186,6 @@ Then, import Switch and wrap the Routes in a switch:
 
 
 This will have the correct functionality
+
+
+Go over Examples in the docs for other functionality

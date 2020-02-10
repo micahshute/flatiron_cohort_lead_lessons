@@ -41,18 +41,13 @@ export default function App() {
          <Switch>
             <Route 
               path="/search" 
-              render={props => (
-                <SearchPokemon {...props} handleChoosePokemon={handleChoosePokemon} />
-              )}
-            
-            />
-
+            >
+               <SearchPokemon handleChoosePokemon={handleChoosePokemon} />
+            </Route>
             <Route 
               path="/"
-              render={props => (
-                <PokePoolContainer {...props} handleChoosePokemon={handleChoosePokemon}/>
-              )}
             >
+              <PokePoolContainer handleChoosePokemon={handleChoosePokemon}/>
             </Route>
           </Switch>
           
