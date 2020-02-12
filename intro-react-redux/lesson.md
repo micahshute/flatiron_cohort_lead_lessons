@@ -43,3 +43,16 @@ We are going to focus on the perspective of Mycroft. He will be in charge of cra
 To organize the data and make it managable, he stadardizes the reports his informants submit to his drop site. The way of retreiving data is up to the informant, but when they deliver the data, it must be in an `action` object as he specifies. Also, each informant is operating on a need-to-know basis, so they should not just have access to the entire state. 
 
 Let's see what we can do.
+
+`yarn add redux react-redux styled-components`
+
+
+### Make the information warehouse. What info do we want?
+- Villain list
+- Moriarty Location
+- Information drop
+
+
+Now that we know the info we want to maintain, lets make the rules our informants have to follow when they want to deposit the information. To do so we make reducers, which take in state and an action as an argument.  
+
+The informant is responsible for delivering a properly formatted action object
