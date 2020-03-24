@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby -w
+
+require_relative '../environment'
+
+CLI.new.call

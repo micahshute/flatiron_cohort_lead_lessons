@@ -1,0 +1,20 @@
+procedural ruby, if you have a hash in variable h a key in variable k and a value in variable v how do you set a key-value pair in your hash?, h.k = v, h[k] = v, h = v, k = v, 1
+procedural ruby, how would you set the input argument a to a default value of 5?, def method_name(5), def method_name(a=5), def method_name(a); a=5; end;, def 5(a), 1
+procedural ruby, what value is the index of the first element in an array?, 1, -1, 10, 0, 3
+procedural ruby, what iterator gives you one element at a time in the block and returns the original array?, each, map, select, reduce, 0
+procedural ruby, what iterator returns a transformed array of the same size whose element's values are determined by the last line in your block?, select, each, map, select, 2
+procedural ruby, what iterator would you use if you wanted to choose specific elements from an array which will make up a new most likely smaller array?, map, reduce, each, select, 3
+procedural ruby, what is the BEST method to use to see if an array has a specific element in it?, each, collect, include?, any?, 2
+procedural ruby, what type of data is returned by a binary operator, boolean, string, array, trick question: even though a binary operator evaluates truthiness or falseyness the return value will be one of the elements it is operating on, 3
+procedural ruby, if i say a && b and a is falsey will b ever be evaluated?, yes, no, i dont know, who cares, 1
+procedural ruby, if i say a && b and a is truthy will b ever be evaluated?, yes, no, i dont know, who cares, 0
+procedural ruby, if i say a || b and a is falsey will b ever be evaluated?, yes, no, i dont know, who cares, 0
+procedural ruby, if i say a || b an a is truthy will b ever be evaluated?, yes, no, i dont know, who cares, 1
+oo ruby, can i set instance variables in my initilize method that did not come in as arguments?, yes, no, i dont know, who cares, 0
+oo ruby, should i declare and assign all of my instance variables in my initialize method even if I want them to be nil?, yes, no, maybe, i dont have to but micah says i should, 3
+oo ruby, how do i access a method from a variable which holds an object?, using square brackets, using curly brackets, using dot notation, using a space, 2
+oo ruby, can i access instance variables without readers and writers?, no, yes using instance_variable_get but i shouldn't ever use that, yes and i should do it, i like turtles, 1
+oo ruby, if i dont want someone to be able to change an instance variable which is the only macro should i use for that variable?, attr_reader, attr_writer, attr_accessor, only_writer, 0
+oo ruby, if i want two different classes to share functionality what is a good way to acheive that?, write out all the methods twice, inheritance, abstraction, encapsulation, 1
+oo ruby, if i want to establish a relationship between two objects should i use inheritance?, yes, NOOOO, sometimes, i like turtles, 1
+oo ruby, if i need information in a method which should not be a property of an object how do i get access to it in said method?, pass it in as an argument, set it as an instance variable, use inheritance, set it as a class variable, 0
