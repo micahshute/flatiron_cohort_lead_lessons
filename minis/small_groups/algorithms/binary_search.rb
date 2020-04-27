@@ -72,11 +72,10 @@ num_people = 327 * 10 ** 6
 world_population = []
 puts "Populating..."
 r = Random.new
-# num_people.to_i.times.with_index { |i| world_population << i + 1}
+
 world_population = (1..num_people).to_a
 puts "Sorting..."
-# world_population << "Micah Shute"
-# world_population.sort!
+
 puts "Ready?"
 gets
 search_num = 327 * 10 ** 6 - 1
