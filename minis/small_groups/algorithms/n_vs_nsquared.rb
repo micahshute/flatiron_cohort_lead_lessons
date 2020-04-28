@@ -41,6 +41,8 @@ def smallest_num_nsquared(a)
     # "optimized" because it will stop checking if it finds a number bigger than the 
     # number it is testing to be minimum. It will still always be slower than the O(n) 
     # algorithm though.
+
+    
     for num in a 
         for innernum in a
             smallest = true
@@ -58,7 +60,7 @@ end
 def smallest_num_n(a)
     # Always only checks once per item in the array
     smallest = Float::INFINITY
-    a.each do |num|
+    for num in a
         Checks.lincount += 1
         smallest = num if num < smallest
     end
@@ -67,7 +69,7 @@ end
 
 
 def smallest_n_squared_harder_to_tell(a)
-    a.each do |num|
+    for num in a 
         Checks.sqcount2 += 1
         return num if a.select { |numcheck| Checks.sqcount2 += 1; numcheck < num }.length == 0
         # Note: this is even "worse" than the other n^2 because it doesn't stop checking if one too big

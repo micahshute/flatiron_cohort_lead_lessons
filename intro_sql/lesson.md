@@ -42,6 +42,10 @@ Now, add some people from the study group
 
 Open up DB browser, look at the database there
 
+Run sql scripts: 
+
+`sqlite3 pets_database.db < 02_add_column_to_cats.sql`
+
 #### Coding challenges
 
 - use downloaded database:
