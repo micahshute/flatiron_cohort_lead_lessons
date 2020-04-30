@@ -22,20 +22,27 @@ An organization should have a name and a motto, and it should have many criminal
 
 Once you have the database set up, start gathering data. Here is what we know so far:
 
+---
 
-Known Crimes
+**Known Crimes**
+
 excessive awesomeness, 123 main st, 0 dollars stolen, casulaty count: 0
 
+---
 
-Known Criminals
+**Known Criminals**
+
 micah, aka iron man, 123 main st, is a part of spectre
 
+---
 
-Known Organizations
+**Known Organizations**
+
 spectre
 
+---
 
-You are in charge of adding more information!
+You are in charge of adding more information! Try using the Faker Gem in IRB if you want to get familiartiy with it!
 
 
 Once you have gathered your data, now you need to teach us non-techies how to access your work. I need to be able to:
