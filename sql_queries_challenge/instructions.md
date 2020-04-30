@@ -26,7 +26,7 @@ Once you have the database set up, start gathering data. Here is what we know so
 
 **Known Crimes**
 
-excessive awesomeness, 123 main st, 0 dollars stolen, casulaty count: 0
+excessive awesomeness, 123 main st, 0 dollars stolen, casulaty count: 0, committed by micah
 
 ---
 
@@ -38,7 +38,7 @@ micah, aka iron man, 123 main st, is a part of spectre
 
 **Known Organizations**
 
-spectre
+spectre, "we bad"
 
 ---
 
