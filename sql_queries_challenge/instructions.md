@@ -51,5 +51,9 @@ Once you have gathered your data, now you need to teach us non-techies how to ac
 - Get a list of all crimes a criminal committed
 - Get a list of all crimes associated with one organization
 - Get a list of all criminals associated with one organization
+- Get a count of all criminals in an organization
+- Get a count of all crimes committed by a criminal
+- Get a count of all crimes committed by an organization
+- Get a count of all criminals in an organizaiton and the total number of crimes commited by the organization
 
 Deliver your report by the end of the study group!
