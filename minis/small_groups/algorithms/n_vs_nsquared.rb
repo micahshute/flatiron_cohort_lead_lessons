@@ -42,7 +42,6 @@ def smallest_num_nsquared(a)
     # number it is testing to be minimum. It will still always be slower than the O(n) 
     # algorithm though.
 
-    
     for num in a 
         for innernum in a
             smallest = true
